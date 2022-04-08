@@ -25,3 +25,5 @@ app.use('/admin',admin)
 app.listen(port,function(){
     console.log(`This application is listening to the port: ${port}`)
 })
+
+export default app
