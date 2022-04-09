@@ -2,8 +2,7 @@
 import express from 'express'
 const admin = express.Router()
 
-admin.get('/',(req,res)=>{
-    res.render('base')
-})
+import loginRoute from './admin/login.js'
+admin.use('/login', loginRoute) 
  
 export default admin

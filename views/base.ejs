@@ -4,12 +4,15 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Express.js Web Framework</title>
+        <title><%= siteTitle %> | <%= pageTitle %></title>
         <link href="/fonts/setup.css" rel="stylesheet">
         <link href="/styles/base.css" rel="stylesheet">
+        <link href="/images/siteLogo.png" rel="icon" ></link>
         <script src="/scripts/jquery.js"></script>
     </head>
     <body>
-        <p>Welcome to Khmer Web Blog Engine.</p>
+        <% if(route == 'admin/login'){ %>
+            <%- include('admin/login.ejs') %>
+        <% } %>
     </body>
 </html>
