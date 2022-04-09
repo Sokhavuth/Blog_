@@ -11,8 +11,12 @@
         <script src="/scripts/jquery.js"></script>
     </head>
     <body>
-        <% if(route == 'admin/login'){ %>
+        <% if(route == '/admin/login'){ %>
             <%- include('admin/login.ejs') %>
+        <% }else if(route == '/admin/post'){ %>
+            <%- include('admin/post.ejs') %>
+        <% }else if(route == '/'){ %>
+            <%- include('front/index.ejs') %>
         <% } %>
     </body>
 </html>

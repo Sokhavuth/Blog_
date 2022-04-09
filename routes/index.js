@@ -4,6 +4,8 @@ const index = express.Router()
 import settings from '../settings.js'
 
 index.get('/',(req,res)=>{
+    settings.pageTitle = "ទំព័រ​ដើម"
+    settings.route = '/'
     res.render('base',settings)
 })
  

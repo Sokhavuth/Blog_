@@ -1,14 +1,15 @@
 //routes/admin/login.js
 import express from 'express'
 const login = express.Router()
-import settings from '../../settings.js'
 
-login.get('/', async function(req, res, next) {
-    settings.pageTitle = 'ទំព័រ​ចុះ​ឈ្មោះ'
-    settings.message = ''
-    settings.route = 'admin/login'
-  
-    res.render('base', settings)
+login.get('/',async function(req,res) {
+    let module = await import('../../controllers/admin/login/get.js')
+    module.default(req,res)
+})
+
+login.post('/',async function(req,res){
+    const module = await import('../../controllers/admin/login/post.js')
+    module.default(req,res)
 })
 
 export default login

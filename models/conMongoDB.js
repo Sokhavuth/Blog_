@@ -11,7 +11,7 @@ const url = process.env.DATABASE_URI
 let resultPromise = new Promise(function(resolve,reject){
     mymongo.connect(url, {useUnifiedTopology:true}, function(err, db){
         if (err) throw err
-        const mydb = db.db("mydb")
+        const mydb = db.db("blog")
         if(mydb){
             resolve(mydb)
             console.log('Connected to the main database!!')
