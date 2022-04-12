@@ -12,11 +12,11 @@ export default async (req,res)=>{
         }else{
             settings.message = 'ពាក្យ​សំងាត់​មិន​ត្រឹមត្រូវ​ទេ'
             settings.route = '/admin/login'
-            res.render('base',settings)
+            res.render('base',{data:settings})
         }
     }else{
         settings.message = 'Email មិន​ត្រឹមត្រូវទេ'
         settings.route = '/admin/login'
-        res.render('base',settings)
+        res.render('base',{data:settings})
     }
 }

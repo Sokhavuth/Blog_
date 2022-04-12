@@ -7,11 +7,10 @@ post.get('/',function(req,res){
     if(req.session.user){
         settings.pageTitle = 'ទំព័រ​ការផ្សាយ'
         settings.route = '/admin/post'
-        res.render('base',settings)
+        res.render('base',{data:settings})
     }else{
         res.redirect('/admin/login')
     }
-    
 })
 
 export default post

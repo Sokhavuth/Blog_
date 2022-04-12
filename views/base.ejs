@@ -4,18 +4,18 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title><%= siteTitle %> | <%= pageTitle %></title>
+        <title><%= data.siteTitle %> | <%= data.pageTitle %></title>
         <link href="/fonts/setup.css" rel="stylesheet">
         <link href="/styles/base.css" rel="stylesheet">
         <link href="/images/siteLogo.png" rel="icon" ></link>
         <script src="/scripts/jquery.js"></script>
     </head>
     <body>
-        <% if(route == '/admin/login'){ %>
+        <% if(data.route.includes('/login')){ %>
             <%- include('admin/login.ejs') %>
-        <% }else if(route == '/admin/post'){ %>
-            <%- include('admin/post.ejs') %>
-        <% }else if(route == '/'){ %>
+        <% }else if(data.route.includes('/admin/')){ %>
+            <%- include('admin/index.ejs') %>
+        <% }else if(data.route == '/'){ %>
             <%- include('front/index.ejs') %>
         <% } %>
     </body>

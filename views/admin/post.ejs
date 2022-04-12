@@ -1,1 +1,95 @@
-Hello To Post page
+<!--views/admin/post.ejs-->
+<link rel='stylesheet' href='/styles/admin/post.css' />
+<script src="/scripts/ckeditor/ckeditor.js"></script>
+<script src="/scripts/admin/video.js"></script>
+
+<section class='Main'>
+    <div class='content'>
+        <form action='/admin/post' method='post' >
+            <% if('edit' in data){ %>
+            <input type='text' name='title' value='' placeholder='ចំណងជើង' required />
+            <textarea name="content" id="editor" ></textarea>
+            <div class='wrapper'>
+                <select name='category' class='category' >
+                    <option>post</option>
+                </select>
+                <script></script>
+                <input type='text' name='thumb' value='' required placeholder="តំណរ​ភ្ជាប់​រូប​តំណាង" />
+                <input type='datetime-local' value='' name='datetime' required />
+                <input type='hidden' name='editid' value='' />
+                <input type='submit' value='ចុះ​ផ្សាយ' />
+            </div>
+            <input name='entries' value='' type='hidden' />
+            <% }else{ %>
+            <input type='text' name='title' placeholder='ចំណងជើង' required />
+            <textarea name="content" id="editor" ></textarea>
+            <div class='wrapper'>
+                <select name='category'>
+                    
+                        <option>post</option>
+                    
+                </select>
+                <input type='text' name='thumb' required placeholder="តំណរ​ភ្ជាប់​រូប​តំណាង" />
+                <input type='datetime-local' value='' name='datetime' required />
+                <input type='submit' value='ចុះ​ផ្សាយ' />
+            </div>
+            <input name='entries' value='' type='hidden' />
+            <% } %>
+        </form>
+ 
+        <div class='form'>
+            <select name='type'>
+                <option>YouTube</option>
+                <option>YouTubePlaylist</option>
+                <option>Facebook</option>
+                <option>OK</option>
+                <option>Dailymotion</option>
+                <option>Vimeo</option>
+            </select>
+            <input name='id' type='text' placeholder="អត្តសញ្ញាណវីដេអូ" required />
+            <select name='ending'>
+                <option>ចប់​</option>
+                <option>មិន​ទាន់ចប់</option>
+            </select>
+            <input onclick='genJson()' type="button" value="បញ្ចូល​វីដេអូ" />
+        </div>
+ 
+        <table class='viddata'></table>
+        
+        <% if('edit' in data){ %>
+            <script>
+                var entries = JSON.parse('{{!data["item"][6]}}')
+            </script>
+        <% } %>
+ 
+        <script>
+        if(entries.length > 0){
+ 
+            let html = ``
+            for(let v in entries){
+                episode += 1
+                html += `<tr>`
+                html += `<td title="Delete" onClick="deleteRow(event)" class="episode">${episode}</td>`
+                html += `<td class="td${episode}">${entries[v].type}</td>`
+                html += `<td class="td${episode}">${entries[v].id}</td>`
+                html += `<td class="td${episode}">${entries[v].ending}</td>`
+                html += `</tr>`
+            }
+ 
+            if($('.viddata').html() === ''){
+                $('.viddata').append('<tr>')
+                $('.viddata').append('<th>ភាគ/លុប</th>')
+                $('.viddata').append('<th>ប្រភេទ​</th>')
+                $('.viddata').append('<th>អត្តសញ្ញាណ​</th>')
+                $('.viddata').append('<th>ចប់ឬ​នៅ?</th>')
+                $('.viddata').append('</tr>')
+            }
+ 
+            $('.viddata').append(`${html}`)
+ 
+        }
+        </script>
+ 
+        <script src="/scripts/ckeditor/config.js"></script>
+    </div>
+</section>

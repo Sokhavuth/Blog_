@@ -9,6 +9,6 @@ export default (req,res)=>{
         settings.message = ''
         settings.route = '/admin/login'
   
-        res.render('base', settings)
+        res.render('base', {data:settings})
     }
 }

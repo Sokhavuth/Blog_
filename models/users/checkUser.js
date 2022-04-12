@@ -1,4 +1,4 @@
-//controllers/admin/users/checkUser.js
+//models/users/checkUser.js
 
 export default async (req)=>{
     const query = {email:req.body.email}

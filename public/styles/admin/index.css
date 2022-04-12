@@ -1,0 +1,57 @@
+/* public/styles/admin/index.css */
+.Header{
+    background: var(--background-dark);
+    border-bottom: 8px solid white;
+}
+
+.Header .wrapper{
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    align-items: center;
+}
+
+.Header .wrapper .logo{
+    font: 22px/1.5 Anton, Limonf3;
+}
+
+.Header .wrapper form{
+    display: grid;
+    grid-template-columns: 20% auto 15%;
+}
+
+.Header .wrapper form input,
+.Header .wrapper form select{
+    font: var(--background-light);
+    padding: 0 5px;
+}
+
+.Header .wrapper .logout{
+    text-align: right;
+}
+
+.Body .wrapper{
+    display: grid;
+    grid-template-columns: 25% auto;
+    margin-top: 20px;
+}
+
+.Body .wrapper .sidebar{
+    max-height: 600px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-gap: 10px;
+    align-items: center;
+    background: white;
+    margin-right: 10px;
+}
+
+.Body .wrapper .sidebar a img{
+    width: 100%;
+}
+
+.Body .wrapper .sidebar a{
+    font: 18px/1.5 Koulen, Oswald;
+    color: grey;
+}

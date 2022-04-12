@@ -1,11 +1,11 @@
 /* public/styles/base.css */
 :root{
-    --background: grey;
-    --background-dark: black;
-    --background-light: lightgrey;
+    --background: #d7532c;
+    --background-dark: #2b2b2b;
+    --background-light: #f9dd89;
     --body-font: 14px/1.5 Vidaloka, OdorMeanChey;
-    --link: teal;
-    --color: black;
+    --link: lightgrey;
+    --color: white;
 }
   
 *{
@@ -21,12 +21,12 @@ a:hover{
     opacity: .7;
 }
 .region{
-    max-width: 1200px;
+    max-width: 1150px;
     margin: 0 auto;
 }
   
 body{
     color: var(--color);
     font: var(--body-font);
-    background: var(--background);
+    background: var(--background-light);
 }

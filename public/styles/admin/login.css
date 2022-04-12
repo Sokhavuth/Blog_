@@ -2,14 +2,14 @@
 .Login{
     width: 400px;
     margin: 100px auto;
-    background: var(--background-light);
+    background: var(--background);
 } 
 
 .Login .title{
     text-align: center;
     font: 18px/1.5 Koulen, Oswald;
     padding: 5px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid white;
 }
 
 .Login form{
@@ -22,6 +22,7 @@
 
 .Login form a{
     text-align: right;
+    color: white;
 }
 
 .Login form input{
