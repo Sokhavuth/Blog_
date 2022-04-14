@@ -5,7 +5,7 @@ export default async (req)=>{
  
     let myCategory = {
         id: id, 
-        label: req.body.label,
+        title: req.body.label,
         thumb: req.body.thumb,
         date: new Date(req.body.datetime)
     }

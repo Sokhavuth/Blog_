@@ -6,6 +6,8 @@
     --body-font: 14px/1.5 Vidaloka, OdorMeanChey;
     --link: lightgrey;
     --color: white;
+    --item-listing: white;
+    --item-listing-color: grey;
 }
   
 *{
