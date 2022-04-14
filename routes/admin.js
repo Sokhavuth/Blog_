@@ -7,5 +7,8 @@ admin.use('/login', loginRoute)
 
 import postRoute from './admin/post.js'
 admin.use('/post', postRoute) 
+
+import categoryRoute from './admin/category.js'
+admin.use('/category', categoryRoute)
  
 export default admin

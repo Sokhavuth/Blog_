@@ -1,0 +1,21 @@
+/* public/styles/admin/category.css */
+.content form{
+    width: 60%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-gap: 5px;
+    align-items: center;
+}
+ 
+.content form input{
+    padding: 5px 10px;
+}
+ 
+.content form input[type=submit]{
+    font: var(--body-font);
+}
+ 
+.content form a{
+    text-align: right;
+    color: black;
+}
