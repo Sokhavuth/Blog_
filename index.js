@@ -14,13 +14,10 @@ import MongoStore from 'connect-mongo'
 const app = express()
 
 app.use(session({
-    srote: MongoStore.create({mongoUrl: process.env.DATABASE_URI}),
+    srote: MongoStore.create({mongoUrl:process.env.DATABASE_URI}),
     secret: process.env.SECRET_KEY,
     resave: false,
-    saveUninitialized: false,
-    cookie: {
-        maxAge: 1000 * 60 * 60 * 24 * 7 * 2 // two weeks
-    }
+    saveUninitialized: false
 }))
 
 const port = process.env.PORT || 3000

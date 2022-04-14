@@ -1,15 +1,22 @@
 //routes/admin/category.js
 import express from 'express'
 const category = express.Router()
-import settings from '../../settings.js'
 
-category.get('/',function(req,res){
+category.get('/',async function(req,res){
     if(req.session.user){
-        settings.pageTitle = 'ទំព័រ​ជំពូក'
-        settings.route = '/admin/category'
-        res.render('base',{data:settings})
+        const module = await import('../../controllers/admin/category/read.js')
+        module.default(req,res)
     }else{
         res.redirect('/admin/login')
+    }
+})
+
+category.post('/', async function(req,res){
+    if(req.session.user){
+        const module = await import('../../controllers/admin/category/create.js')
+        module.default(req,res)
+    }else{
+      res.redirect('/admin/login')
     }
 })
 
