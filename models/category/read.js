@@ -1,6 +1,7 @@
 //models/category/read.js
 
 export default async (req,amount=10,id=false,page=0)=>{
+    console.log(req.params.id)
     if(id){
         return await req.mydb.collection("categories").findOne({id:id})
     }else if(page){
