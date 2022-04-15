@@ -10,5 +10,5 @@ export default async (req)=>{
         date: new Date(req.body.datetime)
     }
  
-    req.mydb.collection("categories").insertOne(myCategory)
+    await req.mydb.collection("categories").insertOne(myCategory)
 }
