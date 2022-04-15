@@ -29,4 +29,13 @@ category.get('/edit/:id',async function(req,res){
     }
 })
 
+category.post('/edit/:id',async function(req,res){
+    if(req.session.user){
+        const module = await import('../../controllers/admin/category/update.js')
+        module.default(req,res,req.params.id)
+    }else{
+        res.redirect('/admin/login')
+    }
+})
+
 export default category

@@ -1,4 +1,4 @@
-//models/category/edit.js
+//models/category/update.js
 
 export default async (req)=>{
     const myquery = {id:req.params.id}
@@ -8,5 +8,5 @@ export default async (req)=>{
         date: new Date(req.body.datetime)
     }}
  
-    req.mydb.collection("categories").updateOne(myquery,newvalue)
+    await req.mydb.collection("categories").updateOne(myquery,newvalue)
 }

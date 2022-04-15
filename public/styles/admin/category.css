@@ -8,11 +8,13 @@
 }
  
 .content form input{
-    padding: 5px 10px;
+    
 }
  
-.content form input[type=submit]{
+.content form input[type=submit],
+.content form input{
     font: var(--body-font);
+    padding: 5px 10px;
 }
  
 .content form a{

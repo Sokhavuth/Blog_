@@ -2,10 +2,19 @@
 <link href="/styles/admin/category.css" rel="stylesheet"></link>
 
     <div class='content'>
+        <% if('item' in data){ %>
+        <form action='/admin/category/edit/<%= data.item.id %>' method='post' >
+            <a>ឈ្មោះជំពូកៈ</a><input type='text' value="<%= data.item.title %>" name='label' required />
+            <a>រូបសញ្ញាៈ</a><input type='text' value="<%= data.item.thumb %>" name='thumb' required />
+            <a>ពេល​បង្កើតៈ</a><input type='datetime-local' value='<%= data.item.date %>' name="datetime" required />
+            <a></a><input type='submit' value='បញ្ជូនទិន្នន័យ' />
+        </form>
+        <% }else{ %>
         <form action='/admin/category' method='post' >
             <a>ឈ្មោះជំពូកៈ</a><input type='text' name='label' required />
             <a>រូបសញ្ញាៈ</a><input type='text' name='thumb' required />
             <a>ពេល​បង្កើតៈ</a><input type='datetime-local' value='' name="datetime" required />
             <a></a><input type='submit' value='បញ្ជូនទិន្នន័យ' />
         </form>
+        <% } %>
     </div>

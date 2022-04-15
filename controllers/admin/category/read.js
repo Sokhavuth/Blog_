@@ -4,10 +4,19 @@ import read from '../../../models/category/read.js'
 import count from '../../../models/count.js'
 
 export default async (req,res)=>{
-    settings.pageTitle = 'ទំព័រ​ជំពូក'
-    settings.route = '/admin/category'
-    settings.items = await read(req,settings.dItemLimit)
-    settings.count = await count(req,'categories')
+    let mySettings = JSON.parse(JSON.stringify(settings))
+    mySettings.pageTitle = 'ទំព័រ​ជំពូក'
+    mySettings.route = '/admin/category'
+    
+    if(req.params.id){
+        mySettings.item = await read(req,mySettings.dItemLimit,req.params.id)
+        const date = mySettings.item.date.toLocaleDateString('fr-CA')
+        const time = mySettings.item.date.toLocaleTimeString('it-IT')
+        mySettings.item.date = date + 'T' +  time
+    }
 
-    res.render('base',{data:settings})
+    mySettings.items = await read(req,mySettings.dItemLimit)
+    mySettings.count = await count(req,'categories')
+
+    res.render('base',{data:mySettings})
 }
