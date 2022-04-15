@@ -1,4 +1,4 @@
-//models/category/update.js
+//models/category/delete.js
 
 export default async (req)=>{
     const myquery = {id:req.params.id}
