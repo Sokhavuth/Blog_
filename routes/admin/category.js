@@ -32,7 +32,16 @@ category.get('/edit/:id',async function(req,res){
 category.post('/edit/:id',async function(req,res){
     if(req.session.user){
         const module = await import('../../controllers/admin/category/update.js')
-        module.default(req,res,req.params.id)
+        module.default(req,res)
+    }else{
+        res.redirect('/admin/login')
+    }
+})
+
+category.get('/delete/:id',async function(req,res){
+    if(req.session.user){
+        const module = await import('../../controllers/admin/category/delete.js')
+        module.default(req,res)
     }else{
         res.redirect('/admin/login')
     }
