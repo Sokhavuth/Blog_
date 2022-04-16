@@ -23,7 +23,7 @@ category.post('/', async function(req,res){
 category.get('/edit/:id',async function(req,res){
     if(req.session.user){
         const module = await import('../../controllers/admin/category/read.js')
-        module.default(req,res,req.params.id)
+        module.default(req,res)
     }else{
         res.redirect('/admin/login')
     }
@@ -41,6 +41,15 @@ category.post('/edit/:id',async function(req,res){
 category.get('/delete/:id',async function(req,res){
     if(req.session.user){
         const module = await import('../../controllers/admin/category/delete.js')
+        module.default(req,res)
+    }else{
+        res.redirect('/admin/login')
+    }
+})
+
+category.post('/paginate',async function(req,res){
+    if(req.session.user){
+        const module = await import('../../controllers/admin/category/paginate.js')
         module.default(req,res)
     }else{
         res.redirect('/admin/login')

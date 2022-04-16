@@ -127,3 +127,7 @@
     margin: 10px 0 20px;
     padding: 10px 0 5px;
 }
+
+.Listing .paginate img:hover{
+    cursor: pointer;
+}

@@ -1,5 +1,6 @@
 <!--views/admin/index.ejs-->
 <link href="/styles/admin/index.css" rel="stylesheet">
+<script src="/scripts/admin/paginate.js"></script>
 
 <section class="Header">
     <div class="wrapper region">
@@ -73,7 +74,7 @@
         <% } %>
         </ul>
         <div class="paginate region">
-            <img onclick="loadMore('<%= data.route %>')" src="/images/load-more.png"/>
+            <img onclick="paginate('<%= data.route %>')" src="/images/load-more.png"/>
         </div>
     </div>
 </section>

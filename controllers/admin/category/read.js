@@ -5,12 +5,12 @@ import count from '../../../models/count.js'
 
 let mySettings = JSON.parse(JSON.stringify(settings))
 
-export default async (req,res,id=0)=>{
+export default async (req,res)=>{
     mySettings.pageTitle = 'ទំព័រ​ជំពូក'
     mySettings.route = '/admin/category'
 
-    if(id){
-        mySettings.item = await read(req,mySettings.dItemLimit,id)
+    if(req.params.id){
+        mySettings.item = await read(req,mySettings.dItemLimit,req.params.id)
         const date = mySettings.item.date.toLocaleDateString('fr-CA')
         const time = mySettings.item.date.toLocaleTimeString('it-IT')
         mySettings.item.date = date + 'T' +  time
