@@ -1,4 +1,5 @@
-//asset/js/paginate.js
+//public/scripts/admin/paginate.js
+
 let page = 0
 
 function paginate(route){

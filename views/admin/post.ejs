@@ -6,14 +6,16 @@
 <section class='Main'>
     <div class='content'>
         <form action='/admin/post' method='post' >
-            <% if('edit' in data){ %>
+            <% if(data.edit){ %>
             <input type='text' name='title' value='' placeholder='ចំណងជើង' required />
             <textarea name="content" id="editor" ></textarea>
             <div class='wrapper'>
                 <select name='category' class='category' >
-                    <option>post</option>
+                    <% for(let v in data.categories){ %>
+                    <option><%= data.categories[v].title %></option>
+                    <% } %>
                 </select>
-                <script></script>
+                <script>$(".category").val("<%= data.item.category %>").change()</script>
                 <input type='text' name='thumb' value='' required placeholder="តំណរ​ភ្ជាប់​រូប​តំណាង" />
                 <input type='datetime-local' value='' name='datetime' required />
                 <input type='hidden' name='editid' value='' />
@@ -25,9 +27,9 @@
             <textarea name="content" id="editor" ></textarea>
             <div class='wrapper'>
                 <select name='category'>
-                    
-                        <option>post</option>
-                    
+                    <% for(let v in data.categories){ %>
+                    <option><%= data.categories[v].title %></option>
+                    <% } %>
                 </select>
                 <input type='text' name='thumb' required placeholder="តំណរ​ភ្ជាប់​រូប​តំណាង" />
                 <input type='datetime-local' value='' name='datetime' required />
@@ -56,9 +58,9 @@
  
         <table class='viddata'></table>
         
-        <% if('edit' in data){ %>
+        <% if(data.edit){ %>
             <script>
-                var entries = JSON.parse('{{!data["item"][6]}}')
+                var entries = JSON.parse('<%= data.item.video %>')
             </script>
         <% } %>
  

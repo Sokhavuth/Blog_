@@ -1,13 +1,11 @@
 //routes/admin/post.js
 import express from 'express'
 const post = express.Router()
-import settings from '../../settings.js'
 
-post.get('/',function(req,res){
+post.get('/',async function(req,res){
     if(req.session.user){
-        settings.pageTitle = 'ទំព័រ​ការផ្សាយ'
-        settings.route = '/admin/post'
-        res.render('base',{data:settings})
+        const module = await import('../../controllers/admin/post/read.js')
+        module.default(req,res)
     }else{
         res.redirect('/admin/login')
     }
