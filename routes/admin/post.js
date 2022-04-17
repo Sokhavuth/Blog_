@@ -38,4 +38,22 @@ post.post('/edit/:id',async function(req,res){
     }
 })
 
+post.get('/delete/:id',async function(req,res){
+    if(req.session.user){
+        const module = await import('../../controllers/admin/post/delete.js')
+        module.default(req,res)
+    }else{
+        res.redirect('/admin/login')
+    }
+})
+
+post.post('/paginate',async function(req,res){
+    if(req.session.user){
+        const module = await import('../../controllers/admin/post/paginate.js')
+        module.default(req,res)
+    }else{
+        res.redirect('/admin/login')
+    }
+})
+
 export default post
