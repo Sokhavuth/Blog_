@@ -11,4 +11,13 @@ post.get('/',async function(req,res){
     }
 })
 
+post.post('/',async function(req,res){
+    if(req.session.user){
+        const module = await import('../../controllers/admin/post/create.js')
+        module.default(req,res)
+    }else{
+        res.redirect('/admin/login')
+    }
+})
+
 export default post

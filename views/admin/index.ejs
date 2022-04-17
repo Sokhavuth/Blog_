@@ -56,12 +56,11 @@
             <% for(let item of data.items) { %>
             <li>
                 <div class='thumb'>
-                    <a href='<%= data.route %>/<%= item.id %>'><img src='<%= item.thumb %>'/></a>
-                    <% if('video' in item){ %>
-                        <% if(item.video !== ''){ %>
-                            <img class="play-icon" src="/images/play-icon"/>
+                    <a href='<%= data.route %>/<%= item.id %>'><img src='<%= item.thumb %>'/>
+                        <% if(item.video){ %>
+                            <img class="play-icon" src="/images/play.png"/>
                         <% } %>
-                    <% } %>
+                    </a>  
                 </div>
                 <div class="title">
                     <a href="<%= data.route %>/<%= item.id %>"><%= item.title %></a>

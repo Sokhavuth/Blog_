@@ -96,6 +96,15 @@
     height: 100%;
 }
 
+.Listing ul li .thumb .play-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 25%;
+    height: auto;
+    transform: translate(-50%,-50%);
+}
+
 .Listing ul li .title{
     padding-left: 10px;
     white-space: nowrap;
