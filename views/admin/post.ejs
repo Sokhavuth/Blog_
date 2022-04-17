@@ -21,8 +21,7 @@
                 <input type='datetime-local' value='<%= data.item.date %>' name='datetime' required />
                 <input type='submit' value='ចុះ​ផ្សាយ' />
             </div>
-            <input name='entries' value='<%= data.item.video %>' type='hidden' />
-            <% delete data.item %>
+            <input name='entries' value='<%- data.item.video %>' type='hidden' />
         </form>
         <% }else{ %>
         <form action='/admin/post' method='post' >
@@ -62,18 +61,19 @@
  
         <table class='viddata'></table>
         
-        <% if((data.item)&&(data.item.video)){ %>
+        <% if(data.item){ %>
             <script>
                 var entries = JSON.parse('<%- data.item.video %>')
             </script>
         <% }else{ %>
             <script>
-                var entries = false
+                var entries = ''
             </script>
         <% } %>
+        <% delete data.item %>
 
         <script>
-        if(entries){
+        if(entries.length > 0){
             let html = ``
             for(let v in entries){
                 episode += 1

@@ -57,7 +57,7 @@
             <li>
                 <div class='thumb'>
                     <a href='<%= data.route %>/<%= item.id %>'><img src='<%= item.thumb %>'/>
-                        <% if(item.video){ %>
+                        <% if((item.video)&&(item.video !== '[]')){ %>
                             <img class="play-icon" src="/images/play.png"/>
                         <% } %>
                     </a>  

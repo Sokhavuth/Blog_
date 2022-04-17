@@ -30,7 +30,7 @@ const genJson = () => {
             id: id,
             ending: ending,
         }
-        if(json === ''){
+        if((json === '')){
             json = JSON.stringify([entries])
             $('input[name="entries"]').val(json)
         }else{
@@ -65,11 +65,8 @@ function deleteRow(e) {
     index = index - 1
     let json = $('input[name="entries"]').val()
     json = JSON.parse(json)
-    json.splice(index, 1);
+    json.splice(index, 1)
     json = JSON.stringify(json)
-    if(json.length === 0){
-        json = ''
-    }
     $('input[name="entries"').val(json)
 
     episode -= 1
