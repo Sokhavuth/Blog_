@@ -19,10 +19,8 @@ function appendItem(items, route){
             html += `<li>`
                 html += `<div class='thumb'>`
                     html += `<a href="${route}/${item.id}"><img src="${item.thumb}"/></a>`
-                    if(item.video){
-                        if(item.video !== ''){
-                            html += `<img class="play-icon" src="/images/play-icon"/>`
-                        }
+                    if((item.video)&&(item.video !== '[]')){
+                        html += `<img class="play-icon" src="/images/play.png"/>`
                     }
                 html += `</div>`
                 html += `<div class="title">`
