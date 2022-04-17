@@ -5,10 +5,11 @@
 
 <section class='Main'>
     <div class='content'>
-        <form action='/admin/post' method='post' >
-            <% if(data.edit){ %>
-            <input type='text' name='title' value='' placeholder='ចំណងជើង' required />
-            <textarea name="content" id="editor" ></textarea>
+        
+        <% if(data.item){ %>
+        <form action='/admin/post/edit/<%= data.item.id %>' method='post' >
+            <input type='text' name='title' value='<%= data.item.title %>' placeholder='ចំណងជើង' required />
+            <textarea name="content" id="editor" ><%= data.item.content %></textarea>
             <div class='wrapper'>
                 <select name='category' class='category' >
                     <% for(let v in data.categories){ %>
@@ -16,13 +17,15 @@
                     <% } %>
                 </select>
                 <script>$(".category").val("<%= data.item.category %>").change()</script>
-                <input type='text' name='thumb' value='' required placeholder="តំណរ​ភ្ជាប់​រូប​តំណាង" />
-                <input type='datetime-local' value='' name='datetime' required />
-                <input type='hidden' name='editid' value='' />
+                <input type='text' name='thumb' value='<%= data.item.thumb %>' required placeholder="តំណរ​ភ្ជាប់​រូប​តំណាង" />
+                <input type='datetime-local' value='<%= data.item.date %>' name='datetime' required />
                 <input type='submit' value='ចុះ​ផ្សាយ' />
             </div>
-            <input name='entries' value='' type='hidden' />
-            <% }else{ %>
+            <input name='entries' value='<%= data.item.video %>' type='hidden' />
+            <% delete data.item %>
+        </form>
+        <% }else{ %>
+        <form action='/admin/post' method='post' >
             <input type='text' name='title' placeholder='ចំណងជើង' required />
             <textarea name="content" id="editor" ></textarea>
             <div class='wrapper'>
@@ -36,8 +39,8 @@
                 <input type='submit' value='ចុះ​ផ្សាយ' />
             </div>
             <input name='entries' value='' type='hidden' />
-            <% } %>
         </form>
+        <% } %>
  
         <div class='form'>
             <select name='type'>
@@ -52,22 +55,25 @@
             <select name='ending'>
                 <option>ចប់​</option>
                 <option>មិន​ទាន់ចប់</option>
-                <option>~ចប់</option>
+                <option>~ ចប់</option>
             </select>
             <input onclick='genJson()' type="button" value="បញ្ចូល​វីដេអូ" />
         </div>
  
         <table class='viddata'></table>
         
-        <% if(data.edit){ %>
+        <% if((data.item)&&(data.item.video)){ %>
             <script>
-                var entries = JSON.parse('<%= data.item.video %>')
+                var entries = JSON.parse('<%- data.item.video %>')
+            </script>
+        <% }else{ %>
+            <script>
+                var entries = false
             </script>
         <% } %>
- 
+
         <script>
-        if(entries.length > 0){
- 
+        if(entries){
             let html = ``
             for(let v in entries){
                 episode += 1
