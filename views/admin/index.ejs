@@ -22,6 +22,7 @@
 
 <section class="Body">
     <div class="wrapper region">
+        <div class="sidebar-wrapper">
         <div class="sidebar">
             <a href='/admin/post'><img src='/images/movie.png' /></a>
             <a href='/admin/post'>ការផ្សាយ</a>
@@ -41,11 +42,14 @@
             <a href='/admin/setting'><img src='/images/setting.png' /></a>
             <a href='/admin/setting'>Setting</a>
         </div>
+        </div>
         <div class="Content">
             <% if(data.route.includes('/category')){ %>
                 <%- include('category.ejs') %>
             <% }else if(data.route.includes('/post')){ %>
                 <%- include('post.ejs') %>
+            <% }else if(data.route.includes('/book')){ %>
+                <%- include('book.ejs') %>
             <% } %>
         </div>
     </div>
