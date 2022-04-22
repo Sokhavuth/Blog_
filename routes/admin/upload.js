@@ -3,6 +3,16 @@
 import path from 'path'
 import express from 'express'
 const uploadRoute = express.Router()
+
+uploadRoute.get('/',async function(req,res){
+    if(req.session.user){
+        const module = await import('../../controllers/admin/upload/get.js')
+        module.default(req,res)
+    }else{
+        res.redirect('/admin/login')
+    }
+})
+
 import multer from 'multer'
 
 const __dirname = path.resolve()
@@ -17,15 +27,6 @@ const storage = multer.diskStorage({
 })
   
 const upload = multer({storage: storage})
-
-uploadRoute.get('/',async function(req,res){
-    if(req.session.user){
-        const module = await import('../../controllers/admin/upload/get.js')
-        module.default(req,res)
-    }else{
-        res.redirect('/admin/login')
-    }
-})
 
 uploadRoute.post('/',upload.single("uploadFile"),async function(req,res,next){
     if(req.session.user){
