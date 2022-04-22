@@ -1,6 +1,6 @@
-//controllers/admin/category/paginate.js
+//controllers/admin/book/paginate.js
 import settings from '../../../settings.js'
-import read from '../../../models/category/read.js'
+import read from '../../../models/book/read.js'
 
 let mySettings = JSON.parse(JSON.stringify(settings))
 

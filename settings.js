@@ -10,5 +10,6 @@ settings.dItemLimit = 10
 settings.indexPostLimit = 13
 settings.categoryPostLimit = 20
 settings.route = ''
+settings.fileUrl = ''
 
 export default settings

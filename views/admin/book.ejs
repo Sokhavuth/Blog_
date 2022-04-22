@@ -1,4 +1,4 @@
-<!--views/admin/post.ejs-->
+<!--views/admin/book.ejs-->
 <link rel='stylesheet' href='/styles/admin/post.css' />
 <script src="/scripts/ckeditor/ckeditor.js"></script>
 <script src="/scripts/admin/video.js"></script>
@@ -7,7 +7,7 @@
     <div class='content'>
         
         <% if(data.item){ %>
-        <form action='/admin/post/edit/<%= data.item.id %>' method='post' >
+        <form action='/admin/book/edit/<%= data.item.id %>' method='post' >
             <input type='text' name='title' value='<%= data.item.title %>' placeholder='ចំណងជើង' required />
             <textarea name="content" id="editor" ><%= data.item.content %></textarea>
             <div class='wrapper'>
@@ -17,18 +17,23 @@
                     <% } %>
                 </select>
                 <script>$(".category").val("<%= data.item.category %>").change()</script>
-                <input type='text' name='thumb' value='<%= data.item.thumb %>' required placeholder="តំណរ​ភ្ជាប់​រូប​តំណាង" />
-                <input type='datetime-local' value='<%= data.item.date %>' name='datetime' required />
+                <input type='text' name='thumb' value='<%= data.item.thumb %>' 
+                    required placeholder="តំណរ​ភ្ជាប់​រូប​តំណាង" />
+                <input type='datetime-local' value='<%= data.item.date %>' name='datetime' 
+                    required />
                 <input type='submit' value='ចុះ​ផ្សាយ' />
-                <input type="text" value="" name="book-title" required placeholder="ឈ្មោះ​សៀវភៅ" />
-                <input type="text" value="" name="book-cover" required placeholder="រូប​ក្រប​សៀវភៅ" />
-                <input type="text" value="" name="book-chapter" required placeholder="ជំពូក​សៀវភៅ" />
-                <input type="button" value="" required />
+                <input type="text" value="<%= data.item.bookTitle %>" name="bookTitle" 
+                    required placeholder="ឈ្មោះ​សៀវភៅ" />
+                <input type="text" value="<%= data.item.bookCover %>" name="bookCover" 
+                    required placeholder="រូប​ក្រប​សៀវភៅ" />
+                <input type="text" value="<%= data.item.bookChapter %>" name="bookChapter" 
+                    required placeholder="ជំពូក​សៀវភៅ" />
+                <input type="button" value="" />
             </div>
             <input name='entries' value='<%- data.item.video %>' type='hidden' />
         </form>
         <% }else{ %>
-        <form action='/admin/post' method='post' >
+        <form action='/admin/book' method='post' >
             <input type='text' name='title' placeholder='ចំណងជើង' required />
             <textarea name="content" id="editor" ></textarea>
             <div class='wrapper'>
@@ -40,9 +45,12 @@
                 <input type='text' name='thumb' required placeholder="តំណរ​ភ្ជាប់​រូប​តំណាង" />
                 <input type='datetime-local' value='' name='datetime' required />
                 <input type='submit' value='ចុះ​ផ្សាយ' />
-                <input type="text" value="" name="book-title" required placeholder="ឈ្មោះ​សៀវភៅ" />
-                <input type="text" value="" name="book-cover" required placeholder="រូប​ក្រប​សៀវភៅ" />
-                <input type="text" value="" name="book-chapter" required placeholder="ជំពូក​សៀវភៅ" />
+                <input type="text" value="" name="bookTitle" 
+                    required placeholder="ឈ្មោះ​សៀវភៅ" />
+                <input type="text" value="" name="bookCover" 
+                    required placeholder="រូប​ក្រប​សៀវភៅ" />
+                <input type="text" value="" name="bookChapter" 
+                    required placeholder="ជំពូក​សៀវភៅ" />
                 <input type="button" value="" required />
             </div>
             <input name='entries' value='' type='hidden' />

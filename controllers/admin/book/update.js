@@ -1,7 +1,7 @@
-//controllers/admin/post/update.js
+//controllers/admin/book/update.js
 import settings from '../../../settings.js'
-import read from '../../../models/post/read.js'
-import update from '../../../models/post/update.js'
+import read from '../../../models/book/read.js'
+import update from '../../../models/book/update.js'
 
 let mySettings = JSON.parse(JSON.stringify(settings))
 
@@ -10,5 +10,5 @@ export default async (req,res)=>{
     if((req.session.user.role === 'Admin')||(req.session.user.userid === item.userid)){
         await update(req)
     }
-    res.redirect('/admin/post')
+    res.redirect('/admin/book')
 }

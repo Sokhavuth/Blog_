@@ -13,9 +13,9 @@
     <body>
         <% if(data.route.includes('/login')){ %>
             <%- include('admin/login.ejs') %>
-        <% }else if(data.route.includes('/admin/')){ %>
+        <% } else if(data.route.includes('/admin/')){ %>
             <%- include('admin/index.ejs') %>
-        <% }else if(data.route.includes('/')) { %>
+        <% } else if(data.route.includes('/')){ %>
             <%- include('front/index.ejs') %>
         <% } %>
     </body>

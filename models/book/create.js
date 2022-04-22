@@ -1,9 +1,9 @@
-//models/post/create.js
+//models/book/create.js
 
 export default async (req)=>{
     const id = (new Date()).getTime().toString(36) + Math.random().toString(36).slice(2)
 
-    let mypost = {
+    let mybook = {
         id: id,
         title: req.body.title,
         content: req.body.content,
@@ -11,8 +11,11 @@ export default async (req)=>{
         video: req.body.entries,
         category: req.body.category,
         date: new Date(req.body.datetime),
-        author: req.session.user.userid
+        author: req.session.user.userid,
+        bookTitle: req.body.bookTitle,
+        bookCover: req.body.bookCover,
+        bookChapter:  req.body.bookChapter
     }
  
-    await req.mydb.collection("posts").insertOne(mypost)
+    await req.mydb.collection("books").insertOne(mybook)
 }
