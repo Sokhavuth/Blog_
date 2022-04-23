@@ -7,7 +7,7 @@ export default async (req)=>{
     const hashPassword = bcrypt.hashSync(req.body.password, 12)
 
     let myobj = {
-        userid: id, 
+        id: id, 
         title: req.body.title,
         password: hashPassword,
         email: req.body.email,

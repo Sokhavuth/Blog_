@@ -14,10 +14,11 @@ export default async (req,res)=>{
         const date = mySettings.item.date.toLocaleDateString('fr-CA')
         const time = mySettings.item.date.toLocaleTimeString('it-IT')
         mySettings.item.date = date + 'T' +  time
+        req.session.password = mySettings.item.password
     }
 
-    //mySettings.items = await read(req,mySettings.dItemLimit)
-    //mySettings.count = await count(req,'users')
+    mySettings.items = await read(req,mySettings.dItemLimit)
+    mySettings.count = await count(req,'users')
 
     res.render('base',{data:mySettings})
 }

@@ -11,7 +11,7 @@ export default async (req)=>{
         video: req.body.entries,
         category: req.body.category,
         date: new Date(req.body.datetime),
-        author: req.session.user.userid
+        author: req.session.user.id
     }
  
     await req.mydb.collection("posts").insertOne(mypost)

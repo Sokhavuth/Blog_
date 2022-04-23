@@ -13,7 +13,7 @@ export default (req,res,next)=>{
 
     mySettings.pageTitle = 'ទំព័រ​ Upload'
     mySettings.route = '/admin/upload'
-    mySettings.fileUrl = file.filename
+    mySettings.fileUrl = '/uploads/' + file.filename
 
     res.render('base',{data:mySettings})
  }

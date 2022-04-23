@@ -8,7 +8,8 @@
         
         <% if(data.item){ %>
         <form action='/admin/user/edit/<%= data.item.id %>' method='post' >
-            <input type='text' name='title' value='<%= data.item.title %>' placeholder='ចំណងជើង' required />
+            <input type='text' name='title' value='<%= data.item.title %>' 
+                placeholder='ចំណងជើង' required />
             <textarea name="content" id="editor" ><%= data.item.content %></textarea>
             <div class='wrapper'>
                 <select name='category' class='category' >
@@ -16,7 +17,7 @@
                     <option>Editor</option>
                     <option>Admin</option>
                 </select>
-                <script>$(".category").val("<%= data.item.category %>").change()</script>
+                <script>$(".category").val("<%= data.item.role %>").change()</script>
                 <input type='text' name='thumb' value='<%= data.item.thumb %>' 
                     required placeholder="តំណរ​ភ្ជាប់​រូប​តំណាង" />
                 <input type='datetime-local' value='<%= data.item.date %>' name='datetime' 

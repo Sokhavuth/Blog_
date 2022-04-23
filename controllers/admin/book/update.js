@@ -7,7 +7,7 @@ let mySettings = JSON.parse(JSON.stringify(settings))
 
 export default async (req,res)=>{
     let item = await read(req,mySettings.dItemLimit,req.params.id)
-    if((req.session.user.role === 'Admin')||(req.session.user.userid === item.userid)){
+    if((req.session.user.role === 'Admin')||(req.session.user.id === item.author)){
         await update(req)
     }
     res.redirect('/admin/book')
