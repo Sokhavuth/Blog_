@@ -16,5 +16,8 @@ admin.use('/book', bookRoute)
 
 import uploadRoute from './admin/upload.js'
 admin.use('/upload', uploadRoute)
+
+import userRoute from './admin/user.js'
+admin.use('/user', userRoute)
  
 export default admin

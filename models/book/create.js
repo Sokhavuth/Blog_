@@ -1,7 +1,7 @@
 //models/book/create.js
 
 export default async (req)=>{
-    const id = (new Date()).getTime().toString(36) + Math.random().toString(36).slice(2)
+    const id = Date.now() + Math.round(Math.random() * 1E9).toString()
 
     let mybook = {
         id: id,
