@@ -11,4 +11,13 @@ routeUser.get('/',async function(req,res){
     }
 })
 
+routeUser.post('/',async function(req,res){
+    if(req.session.user){
+        const module = await import('../../controllers/admin/user/create.js')
+        module.default(req,res)
+    }else{
+        res.redirect('/admin/login')
+    }
+})
+
 export default routeUser

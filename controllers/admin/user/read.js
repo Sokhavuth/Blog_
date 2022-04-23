@@ -17,7 +17,7 @@ export default async (req,res)=>{
     }
 
     //mySettings.items = await read(req,mySettings.dItemLimit)
-    mySettings.count = await count(req,'users')
+    //mySettings.count = await count(req,'users')
 
     res.render('base',{data:mySettings})
 }

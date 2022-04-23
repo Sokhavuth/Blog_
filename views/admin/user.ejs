@@ -12,8 +12,9 @@
             <textarea name="content" id="editor" ><%= data.item.content %></textarea>
             <div class='wrapper'>
                 <select name='category' class='category' >
-                    <option>Admin</option>
                     <option>Author</option>
+                    <option>Editor</option>
+                    <option>Admin</option>
                 </select>
                 <script>$(".category").val("<%= data.item.category %>").change()</script>
                 <input type='text' name='thumb' value='<%= data.item.thumb %>' 
@@ -37,8 +38,9 @@
             <textarea name="content" id="editor" ></textarea>
             <div class='wrapper'>
                 <select name='category'>
-                    <option>Admin</option>
                     <option>Author</option>
+                    <option>Editor</option>
+                    <option>Admin</option>
                 </select>
                 <input type='text' name='thumb' required placeholder="តំណរ​ភ្ជាប់​រូប​តំណាង" />
                 <input type='datetime-local' value='' name='datetime' required />
