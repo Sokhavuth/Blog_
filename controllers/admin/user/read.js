@@ -1,11 +1,11 @@
 //controllers/admin/user/read.js
-import settings from '../../../settings.js'
 import read from '../../../models/user/read.js'
 import count from '../../../models/count.js'
 
-let mySettings = JSON.parse(JSON.stringify(settings))
-
 export default async (req,res)=>{
+    let module = await import('../../../settings.js')
+    let mySettings = await module.default
+
     mySettings.pageTitle = 'ទំព័រ​អ្នក​ប្រើប្រាស់'
     mySettings.route = '/admin/user'
 

@@ -1,15 +1,21 @@
 //settings.js
+import mydb from './models/conMongoDB.js'
 
-let settings = {}
+async function getSetting(){
+    let settings = {}
+    let DB = await mydb
+    let dbSetting = await DB.collection("settings").findOne()
+    
+    settings.siteTitle = dbSetting.siteTitle
+    settings.pageTitle = ''
+    settings.description = dbSetting.description
+    settings.dLogo = ''
+    settings.dItemLimit = parseInt(dbSetting.dItemLimit)
+    settings.indexPostLimit = parseInt(dbSetting.indexPostLimit)
+    settings.categoryPostLimit = parseInt(dbSetting.categoryPostLimit)
+    settings.route = ''
+    settings.fileUrl = ''
+    return settings
+}
 
-settings.siteTitle = 'កាសែត​យើង'
-settings.pageTitle = ''
-settings.description = 'ព័ត៌មាន ចំណេះដឹង វប្បធម៌ កំសាន្ត'
-settings.dLogo = ''
-settings.dItemLimit = 10
-settings.indexPostLimit = 13
-settings.categoryPostLimit = 20
-settings.route = ''
-settings.fileUrl = ''
-
-export default settings
+export default getSetting()
