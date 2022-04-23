@@ -35,5 +35,12 @@ function appendItem(items, route){
         }
     }
     $('.list').append(html)
+
+    if(route === '/admin/user'){
+        $('.Listing .list li').css({'grid-template-columns':'13% auto 25%'})
+        $('.Listing .list li .thumb').css({'padding-top':'100%'})
+        $('.Listing .list li .thumb img').css({'border-radius':'50%'})
+    }
+
     $('.paginate img').attr('src', '/images/load-more.png')
 }

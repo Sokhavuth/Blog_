@@ -47,4 +47,13 @@ routeUser.get('/delete/:id',async function(req,res){
     }
 })
 
+routeUser.post('/paginate',async function(req,res){
+    if(req.session.user){
+        const module = await import('../../controllers/admin/user/paginate.js')
+        module.default(req,res)
+    }else{
+        res.redirect('/admin/login')
+    }
+})
+
 export default routeUser
