@@ -4,7 +4,7 @@ import bcrypt from 'bcryptjs'
 
 export default async (req,res)=>{
     let module = await import('../../../settings.js')
-    let mySettings = await module.default
+    let mySettings = await module.default()
 
     let user = await checkUser(req)
       

@@ -5,7 +5,7 @@ import count from '../../../models/count.js'
 
 export default async (req,res)=>{
     let module = await import('../../../settings.js')
-    let mySettings = await module.default
+    let mySettings = await module.default()
 
     mySettings.pageTitle = 'ទំព័រ​សៀវភៅ'
     mySettings.route = '/admin/book'

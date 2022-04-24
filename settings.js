@@ -18,4 +18,4 @@ async function getSetting(){
     return settings
 }
 
-export default getSetting()
+export default getSetting

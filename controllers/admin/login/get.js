@@ -6,7 +6,8 @@ export default async (req,res)=>{
         res.redirect('/admin/post')
     }else{
         let module = await import('../../../settings.js')
-        let mySettings = await module.default
+        let mySettings = await module.default()
+
         mySettings.pageTitle = 'ទំព័រ​ចុះ​ឈ្មោះ'
         mySettings.message = ''
         mySettings.route = '/admin/login'

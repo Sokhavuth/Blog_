@@ -4,7 +4,7 @@ import count from '../../../models/count.js'
 
 export default async (req,res)=>{
     let module = await import('../../../settings.js')
-    let mySettings = await module.default
+    let mySettings = await module.default()
 
     mySettings.pageTitle = 'ទំព័រ​អ្នក​ប្រើប្រាស់'
     mySettings.route = '/admin/user'

@@ -1,7 +1,4 @@
 //controllers/admin/upload/read.js
-import settings from '../../../settings.js'
-
-let mySettings = JSON.parse(JSON.stringify(settings))
 
 export default (req,res,next)=>{
     const file = req.file
@@ -10,6 +7,9 @@ export default (req,res,next)=>{
         error.httpStatusCode = 400
         return next(error)
     }
+
+    let module = await import('../../../settings.js')
+    let mySettings = await module.default()
 
     mySettings.pageTitle = 'ទំព័រ​ Upload'
     mySettings.route = '/admin/upload'
