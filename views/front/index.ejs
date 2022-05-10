@@ -10,8 +10,8 @@
             <a href="/" class="siteTitle">Khmer Web</a>
             <form target="/search" method="post">
                 <select name="type">
-                    <option>ការផ្សាយ</option>
                     <option>សៀវភៅ</option>
+                    <option>ព័ត៌មាន</option>
                 </select>
                 <input type="text" name="q" required placeholder="Search"/>
                 <input type="submit" value="ស្វែង​រក" />
@@ -20,5 +20,17 @@
                 <a href="/admin/login">ចូល​ក្នុង</a> | <a>ចុះ​ឈ្មោះ</a>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="Random">
+    <div class="container region">
+        <% if(data.random){ %>
+            <% for(let item of data.random){ %>
+            <a href="/post/<%= item.id %>">
+                <img src="<%= item.thumb %>" />
+            </a>
+            <% } %>
+        <% } %>
     </div>
 </section>
