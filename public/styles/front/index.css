@@ -1,0 +1,36 @@
+/* public/styles/front/index.css */
+.Index .wrapper{
+    background: var(--background-dark);
+    border-bottom: 7px solid white;
+}
+
+.Index .wrapper .outer{
+    display: grid;
+    grid-template-columns: 4% 25% auto  20%;
+    align-items: center;
+}
+
+.Index .wrapper .outer .logo img{
+    width: 100%;
+}
+
+.Index .wrapper .outer .siteTitle{
+    font: 30px/1.5 Courgette;
+    color: white;
+    padding-left: 5px;
+}
+
+.Index .wrapper .outer form{
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+}
+
+.Index .wrapper .outer form input,
+.Index .wrapper .outer form select{
+    font: var(--body-font);
+    padding: 1px 5px;
+}
+
+.Index .wrapper .outer .login{
+    text-align: right;
+}
