@@ -34,3 +34,24 @@
 .Index .wrapper .outer .login{
     text-align: right;
 }
+
+@media only screen and (max-width: 600px){
+    .Index .wrapper .outer{
+        grid-template-columns: 100%;
+        text-align: center;
+    }
+
+    .Index .wrapper .outer .logo img{
+        width: auto;
+    }
+
+    .Index .wrapper .outer .siteTitle{
+        font: 30px/1.5 Courgette;
+        color: white;
+        padding-left: 0;
+    }
+
+    .Index .wrapper .outer .login{
+        text-align: center;
+    }
+}
