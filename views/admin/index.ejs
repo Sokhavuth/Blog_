@@ -5,10 +5,11 @@
 <section class="Header">
     <div class="wrapper region">
         <div class="logo"><%= data.pageTitle %></div>
-        <form method="post" action="/search">
+        <form method="post" action="/admin/search">
             <select name="type">
                 <option>ការផ្សាយ</option>
-                <option>ទំព័រស្តាទិក</option>
+                <option>ជំពូក</option>
+                <option>សៀវភៅ</option>
                 <option>អ្នក​ប្រើប្រាស់</option>
             </select>
             <input type="text" name="q" placeholder="Search" required>
@@ -56,6 +57,8 @@
                 <%- include('user.ejs') %>
             <% }else if(data.route.includes('/setting')){ %>
                 <%- include('setting.ejs') %>
+            <% }else if(data.route.includes('/search')){ %>
+                <%- include('search.ejs') %>
             <% } %>
         </div>
     </div>

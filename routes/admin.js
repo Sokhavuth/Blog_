@@ -22,5 +22,8 @@ admin.use('/user', userRoute)
 
 import settingRoute from './admin/setting.js'
 admin.use('/setting', settingRoute)
+
+import searchRoute from './admin/search.js'
+admin.use('/search', searchRoute)
  
 export default admin

@@ -2,8 +2,8 @@
 //npm install mongodb
 //npm install dotenv
  
-import mongodb from 'mongodb'
-const mymongo = mongodb.MongoClient
+import {MongoClient} from 'mongodb'
+const mymongo = MongoClient
 import dotenv from 'dotenv'
 dotenv.config()
 const url = process.env.DATABASE_URI
