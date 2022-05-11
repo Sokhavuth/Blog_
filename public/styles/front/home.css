@@ -3,6 +3,8 @@
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     grid-gap: 7px;
+    background: white;
+    padding: 7px;
 }
 
 .Random .container img{
@@ -34,6 +36,5 @@
 @media only screen and (max-width: 600px){
     .Random .container{
         grid-template-columns: 100%;
-        padding: 0 7px;
     }
 }
