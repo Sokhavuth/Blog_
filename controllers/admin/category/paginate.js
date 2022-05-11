@@ -6,5 +6,6 @@ export default async (req,res)=>{
     let mySettings = await module.default()
 
     mySettings.items = await read(req,mySettings.dItemLimit)
+    mySettings.type = 'category'
     res.json(mySettings)
 }

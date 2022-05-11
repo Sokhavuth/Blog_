@@ -23,14 +23,10 @@
     </div>
 </section>
 
-<section class="Random">
-    <div class="container region">
-        <% if(data.random){ %>
-            <% for(let item of data.random){ %>
-            <a href="/post/<%= item.id %>">
-                <img src="<%= item.thumb %>" />
-            </a>
-            <% } %>
-        <% } %>
-    </div>
+<section class="include">
+    <% if(data.route === '/'){ %>
+        <%- include('home.ejs') %>
+    <% }else if(data.route.includes('/book')){ %>
+        <%- include('book.ejs') %>
+    <% } %>
 </section>

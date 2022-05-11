@@ -7,24 +7,24 @@ function paginate(route){
     page += 1
     
     $.post(`${route}/paginate/`,{page:page},function(data, status){
-        appendItem(data.items,route)
+        appendItem(data.items,route,data)
     })
 }
 
-function appendItem(items, route){
+function appendItem(items, route,data){
     let html = ''
     
     if(items){
         for(let item of items){
             html += `<li>`
                 html += `<div class='thumb'>`
-                    html += `<a href="${route}/${item.id}"><img src="${item.thumb}"/></a>`
+                    html += `<a href="/${data.type}/${item.id}"><img src="${item.thumb}"/></a>`
                     if((item.video)&&(item.video !== '[]')){
                         html += `<img class="play-icon" src="/images/play.png"/>`
                     }
                 html += `</div>`
                 html += `<div class="title">`
-                    html += `<a href="${route}/${item.id}">${item.title}</a>`
+                    html += `<a href="/${data.type}/${item.id}">${item.title}</a>`
                     html += `<div>${new Date(item.date).toLocaleDateString()}</div>`
                 html += `</div>`
                 html += `<div class="edit">`

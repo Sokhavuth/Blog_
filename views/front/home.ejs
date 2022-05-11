@@ -1,0 +1,17 @@
+<!--views/front/home.ejs-->
+<link rel="stylesheet" href="/styles/front/home.css" />
+
+<section class="Random">
+    <div class="container region">
+        <% if(data.random){ %>
+            <% for(let item of data.random){ %>
+            <a href="/<%= data.type %>/<%= item.id %>">
+                <img src="<%= item.thumb %>" />
+                <% if((item.video)&&(item.video !== "[]")){ %>
+                <img class="play-icon" src="/images/play.png" />
+                <% } %>
+            </a>
+            <% } %>
+        <% } %>
+    </div>
+</section>

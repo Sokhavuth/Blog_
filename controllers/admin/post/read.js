@@ -9,6 +9,7 @@ export default async (req,res)=>{
     
     mySettings.pageTitle = 'ទំព័រ​ការផ្សាយ'
     mySettings.route = '/admin/post'
+    mySettings.type = 'post'
 
     if(req.params.id){
         mySettings.item = await read(req,mySettings.dItemLimit,req.params.id)

@@ -1,0 +1,99 @@
+<!--views/front/book.ejs-->
+<link rel="stylesheet" href="/styles/front/book.css" />
+<link rel="stylesheet" href="/styles/highlight/stackoverflow-dark.css" />
+<script src="/scripts/highlight/highlight.pack.js"></script>
+<script src="/scripts/highlight/line_number.js"></script>
+
+<script>hljs.highlightAll();hljs.initLineNumbersOnLoad()</script>
+
+<section class="Book">
+    <div class="container region">
+        <div class="table-content">
+            <div class="title">
+                <%= data.item.bookTitle %>
+            </div>
+            <div class='chapter-wrapper'>
+                <% 
+                let artiNumber = 0
+                let prevChapter = false
+                let chapNumber = 0
+                let index = 0
+                %>
+                <% for(let item of data.articles){ %>
+                    <% if((!prevChapter)||(item.bookChapter !== prevChapter)){ %>
+                    <ol class='chapter' start='<%= chapNumber+1 %>'>
+                        <li>
+                        <%= item.bookChapter %>
+                        <% prevChapter = item.bookChapter %>
+                        </li>
+                    </ol>
+                    <% 
+                    artiNumber = 0 
+                    chapNumber += 1
+                    %>
+                    <% } %>
+
+                    <ol class='article' start='<%= artiNumber+1 %>' >
+                        <li id="<%= item.id %>">
+                            <a href="/book/<%= item.id %>">
+                                <%= item.title %>
+                            </a>
+                        </li>
+                        <% if(data.item.id === item.id){ %>
+                            <script>
+                            $("#<%= item.id %> a").css('color','var(--background)')
+                            $("#<%= item.id %>").css('color','var(--background)')
+                            
+                            $("#<%= item.id %>")[0].scrollIntoView({
+                                behavior: "smooth",
+                                block: "center"
+                            })
+                            </script>
+                        <% } %>
+                    </ol>
+                    <% artiNumber += 1 %>
+                <% } %>
+                
+            </div>
+        </div>
+    
+        <div class='content'>
+            <div class='article-title'>
+                <span> <%= data.item.title %></span>
+                <% if(data.user){ %>
+                    <span class='edit'>
+                        <a href='/admin/book/edit/<%= data.item.id %>'>
+                            <img  src='/images/edit.png' />
+                        </a>
+                        <a href='/admin/book/delete/<%= data.item.id %>'>
+                            <img  src='/images/delete.png' />
+                        </a>
+                    </span>
+                <% } %>
+            </div>
+            <div class='article-body'><%- data.item.content %></div>
+            
+            <div id="disqus_thread"></div>
+        </div>
+        <script>
+    
+            var disqus_config = function () {
+            this.page.url = "https://khmerweb.vercel.app/book/<%= data.item.id %>" 
+            this.page.identifier = "<%= data.item.id %>"
+            };
+        
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script')
+                s.src = 'https://khmerweb.disqus.com/embed.js'
+                s.setAttribute('data-timestamp', +new Date())
+                (d.head || d.body).appendChild(s)
+            })()
+        </script>
+        <noscript>
+            Please enable JavaScript to view the 
+            <a href="https://disqus.com/?ref_noscript">
+                comments powered by Disqus.
+            </a>
+        </noscript>
+    </div>
+</section>

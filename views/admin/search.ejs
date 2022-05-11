@@ -5,7 +5,7 @@
 <ul class="Search">
     <% for(let item of data.result){ %>
     <li>
-        <a class='thumb' href="/admin/<%= data.type %>/<%= item.id %>">
+        <a class='thumb' href="/<%= data.type %>/<%= item.id %>">
             <img src="<%= item.thumb %>" />
             <% if((item.video) && (item.video !== '[]') ){ %>
             <img class="play-icon" src="/images/play.png" />
@@ -13,13 +13,13 @@
         </a>
         
         <div class="title-outer">
-            <a class='title' href="/admin/<%= data.type %>/<%= item.id %>">
+            <a class='title' href="/<%= data.type %>/<%= item.id %>">
                 <%= item.title %>
             </a>
             <div class='title'><%= (item.date).toLocaleDateString() %></div>
         </div>
         
-        <div class="edit" href="/admin/<%= data.type %>/<%= item.id %>">
+        <div class="edit">
             <a  href="/admin/<%= data.type %>/edit/<%= item.id %>">
                 <img src="/images/edit.png" />
             </a>

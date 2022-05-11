@@ -1,0 +1,39 @@
+/* public/styles/front/home.css */
+.Random .container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 7px;
+}
+
+.Random .container img{
+    width: 100%;
+    float: left;
+}
+
+.Random .container a{
+    position: relative;
+    padding-top: 56.25%;
+}
+
+.Random .container a img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.Random .container a .play-icon{
+    width: 20%;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@media only screen and (max-width: 600px){
+    .Random .container{
+        grid-template-columns: 100%;
+        padding: 0 7px;
+    }
+}

@@ -9,6 +9,7 @@ export default async (req,res)=>{
 
     mySettings.pageTitle = 'ទំព័រ​សៀវភៅ'
     mySettings.route = '/admin/book'
+    mySettings.type = 'book'
 
     if(req.params.id){
         mySettings.item = await read(req,mySettings.dItemLimit,req.params.id)

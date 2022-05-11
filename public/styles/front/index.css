@@ -2,6 +2,7 @@
 .Index .wrapper{
     background: var(--background-dark);
     border-bottom: 7px solid white;
+    margin-bottom: 7px;
 }
 
 .Index .wrapper .outer{
@@ -33,18 +34,6 @@
 
 .Index .wrapper .outer .login{
     text-align: right;
-}
-
-.Random .container{
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    grid-gap: 7px;
-    margin-top: 7px;
-}
-
-.Random .container img{
-    width: 100%;
-    float: left;
 }
 
 @media only screen and (max-width: 600px){
