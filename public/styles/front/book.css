@@ -6,7 +6,7 @@
 
 .Book .container .table-content{
     padding: 20px;
-    background: rgb(241, 240, 240);
+    background: rgb(230, 230, 230);
     color: black;
 }
 
@@ -86,6 +86,10 @@
     border-radius: 4px;
 }
 
+.Book .container .content #disqus_thread{
+    padding-top: 10px;
+}
+
 .hljs-ln-numbers {
     text-align: center;
     color: #ccc;
@@ -99,4 +103,10 @@
 
 .hljs-ln-code {
     padding-left: 1em;
+}
+
+@media only screen and (max-width: 600px){
+    .Book .container{
+        grid-template-columns: 100%;
+    }
 }
