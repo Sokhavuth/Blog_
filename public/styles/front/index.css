@@ -1,7 +1,7 @@
 /* public/styles/front/index.css */
 .Index .wrapper{
     background: var(--background-dark);
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 .Index .wrapper .outer{
