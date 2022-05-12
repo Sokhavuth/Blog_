@@ -12,9 +12,6 @@ export default async (req,res)=>{
 
     if(req.params.id){
         mySettings.item = await read(req,mySettings.dItemLimit,req.params.id)
-        //const date = mySettings.item.date.toLocaleDateString('fr-CA')
-        //const time = mySettings.item.date.toLocaleTimeString('it-IT')
-        //mySettings.item.date = date + 'T' +  time
     }
 
     mySettings.items = await read(req,mySettings.dItemLimit)

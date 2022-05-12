@@ -18,5 +18,5 @@ export default async (req,amount=10)=>{
     }
 
     return await req.mydb.collection(collection)
-        .find(querry).sort({date:-1,_id:-1}).limit(amount).toArray()
+        .find(querry).sort({date:1,_id:-1}).limit(amount).toArray()
 }

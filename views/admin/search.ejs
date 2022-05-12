@@ -16,7 +16,7 @@
             <a class='title' href="/<%= data.type %>/<%= item.id %>">
                 <%= item.title %>
             </a>
-            <div class='title'><%= (item.date).toLocaleDateString() %></div>
+            <div class='title'><%= (new Date(item.date)).toLocaleDateString() %></div>
         </div>
         
         <div class="edit">
