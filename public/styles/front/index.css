@@ -1,8 +1,7 @@
 /* public/styles/front/index.css */
 .Index .wrapper{
     background: var(--background-dark);
-    border-bottom: 7px solid white;
-    margin-bottom: 7px;
+    padding: 10px 0;
 }
 
 .Index .wrapper .outer{
@@ -34,6 +33,11 @@
 
 .Index .wrapper .outer .login{
     text-align: right;
+}
+
+.Menu .wrapper{
+    background: white;
+    margin-bottom: 7px;
 }
 
 @media only screen and (max-width: 600px){
