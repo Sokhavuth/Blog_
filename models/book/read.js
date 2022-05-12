@@ -9,6 +9,6 @@ export default async (req,amount=10,id=false)=>{
             .find().skip(amount*page).sort({date:1,_id:-1}).limit(amount).toArray()
     }else{
         return await req.mydb.collection("books")
-            .find().sort({date:-1,_id:-1}).limit(amount).toArray()
+            .find().sort({date:1,_id:-1}).limit(amount).toArray()
     }
 }
