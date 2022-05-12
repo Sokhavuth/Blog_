@@ -10,7 +10,7 @@ export default async (req)=>{
         thumb: req.body.thumb,
         video: req.body.entries,
         category: req.body.category,
-        date: new Date(req.body.datetime),
+        date: req.body.datetime,
         author: req.session.user.id
     }
  

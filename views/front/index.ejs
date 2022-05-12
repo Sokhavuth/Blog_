@@ -27,16 +27,41 @@
     <link rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/styles/front/menu.css" />
+    <%
+    let home = ''
+    let node = ''
+    let python = ''
+    let typing = ''
+    let job = ''
+    let multimedia = ''
+    let contact = ''
+
+    if(data.route === '/'){
+        home = 'active'
+    }else if(data.route === '/books/node'){
+        node = 'active'
+    }else if(data.route === '/books/python'){
+        python = 'active'
+    }else if(data.route === '/typing'){
+        typing = 'active'
+    }else if(data.route === '/job'){
+        job = 'active'
+    }else if(data.route === '/multimedia'){
+        multimedia = 'active'
+    }else if(data.route === '/contact'){
+        contact = 'active'
+    }
+    %>
     <div class="wrapper">
         <div class="outer region">
             <div class="topnav" id="myTopnav">
-                <a href="/" class="active">Home</a>
-                <a href="/node">Node.js</a>
-                <a href="/python">Python</a>
-                <a href="#typing">Typing Lesson</a>
-                <a href="#freelance">Freelance Job</a>
-                <a href="#multimedia">Multimedia</a>
-                <a href="#contact">Contact</a>
+                <a href="/" class="home <%= home %>">Home</a>
+                <a href="/books/node" class=" node <%= node %>">Node.js</a>
+                <a href="/books/python" class="python <%= python %>">Python</a>
+                <a href="/typing" class="typing <%= typing %>">Typing Lesson</a>
+                <a href="/job" class="job <%= job %>">Freelance Job</a>
+                <a href="/multimedia" class="multimedia <%= multimedia %>">Multimedia</a>
+                <a href="/contact" class="contact <%= contact %>">Contact</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                   <i class="fa fa-bars"></i>
                 </a>

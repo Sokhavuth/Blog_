@@ -5,7 +5,7 @@ export default async (req)=>{
     let newvalue = {$set: {
         title: req.body.label,
         thumb: req.body.thumb,
-        date: new Date(req.body.datetime)
+        date: req.body.datetime
     }}
  
     await req.mydb.collection("categories").updateOne(myquery,newvalue)

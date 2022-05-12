@@ -8,7 +8,7 @@ export default async (req,res)=>{
     mySettings.route = '/'
     mySettings.type = 'book'
 
-    mySettings.random = await random(req,5)
+    mySettings.random = await random(req,35)
     
     res.render('base',{data:mySettings})
 }

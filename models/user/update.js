@@ -16,7 +16,7 @@ export default async (req)=>{
         thumb: req.body.thumb,
         video: req.body.entries,
         role: req.body.category,
-        date: new Date(req.body.datetime),
+        date: req.body.datetime,
         email: req.body.email,
         password: hashPassword,
     }}

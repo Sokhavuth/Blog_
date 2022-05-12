@@ -15,7 +15,7 @@ export default async (req)=>{
         thumb: req.body.thumb,
         info: req.body.content,
         video: req.body.entires,
-        date: new Date(req.body.datetime)
+        date: req.body.datetime
     }
 
     await req.mydb.collection("users").insertOne(myobj)
