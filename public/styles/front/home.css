@@ -68,7 +68,25 @@
     color: black;
 }
 
+.Random .book{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 15px;
+    padding: 15px;
+    background: white;
+    margin: 20px auto;
+}
+
+.Random .book img{
+    width: 100%;
+    float: left;
+}
+
 @media only screen and (max-width: 600px){
+    .Random .book{
+        grid-template-columns: 100%;
+    }
+
     .Random .container{
         grid-template-columns: 100%;
     }

@@ -11,7 +11,7 @@ export default async (req,res)=>{
     if(user){
         if(bcrypt.compareSync(req.body.password, user.password)){
             req.session.user = user
-            res.redirect('/admin/post')
+            res.redirect('/admin/book')
         }else{
             mySettings.message = 'ពាក្យ​សំងាត់​មិន​ត្រឹមត្រូវ​ទេ'
             mySettings.route = '/admin/login'

@@ -3,7 +3,7 @@
 
 export default async (req,res)=>{
     if(req.session.user){
-        res.redirect('/admin/post')
+        res.redirect('/admin/book')
     }else{
         let module = await import('../../../settings.js')
         let mySettings = await module.default()

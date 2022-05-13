@@ -1,6 +1,7 @@
-//controllers/index.js
+//controllers/home/index.js
 import settings from '../../settings.js'
-import random from '../../models/book/random.js'
+import randomArticles from '../../models/book/randomArticles.js'
+import randomBooks from '../../models/book/randomBooks.js'
 
 export default async (req,res)=>{
     let mySettings = await settings()
@@ -8,7 +9,8 @@ export default async (req,res)=>{
     mySettings.route = '/'
     mySettings.type = 'book'
 
-    mySettings.random = await random(req,35)
+    mySettings.randomArticles = await randomArticles(req,35)
+    mySettings.randomBooks = await randomBooks(req,4)
     
     res.render('base',{data:mySettings})
 }

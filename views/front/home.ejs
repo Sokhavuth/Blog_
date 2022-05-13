@@ -3,11 +3,11 @@
 
 <section class="Random">
     <div class="container region">
-        <% if(data.random){ %>
+        <% if(data.randomArticles){ %>
             <% for(let v=0; v<5; v++){ %>
-            <a href="/<%= data.type %>/<%= data.random[v].id %>">
-                <img src="<%= data.random[v].thumb %>" />
-                <% if((data.random[v].video)&&(data.random[v].video !== "[]")){ %>
+            <a href="/<%= data.type %>/<%= data.randomArticles[v].id %>">
+                <img src="<%= data.randomArticles[v].thumb %>" />
+                <% if((data.randomArticles[v].video)&&(data.randomArticles[v].video !== "[]")){ %>
                 <img class="play-icon" src="/images/play.png" />
                 <% } %>
             </a>
@@ -21,11 +21,22 @@
             <a href='/'><img src="/images/right.png" /></a>
         </div>
         <ul>
-            <% for(let v=5; v<data.random.length; v++){ %>
+            <% for(let v=5; v<data.randomArticles.length; v++){ %>
                 <li>
-                    <a href="/book/<%= data.random[v].id %>"><%= data.random[v].title %></a>
+                    <a href="/book/<%= data.randomArticles[v].id %>">
+                        <%= data.randomArticles[v].title %>
+                    </a>
                 </li>
             <% } %>
         </ul>
+    </div>
+    <div class="book region">
+        <% if(data.randomBooks){ %>
+            <% for(let item of data.randomBooks){ %>
+            <a href="/book/<%= item.id %>">
+                <img src="<%= item.bookCover %>" />
+            </a>
+            <% } %>
+        <% } %>
     </div>
 </section>
