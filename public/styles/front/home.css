@@ -1,7 +1,8 @@
 /* public/styles/front/home.css */
 .Random .container{
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: calc(20% - 5.5px) calc(20% - 5.5px) calc(20% - 5.5px) 
+                           calc(20% - 5.5px) calc(20% - 5.5px);
     grid-gap: 7px;
     background: white;
     padding: 7px;
@@ -70,7 +71,8 @@
 
 .Random .book{
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: calc(25% - 11.25px) calc(25% - 11.25px) 
+                           calc(25% - 11.25px) calc(25% - 11.25px);
     grid-gap: 15px;
     padding: 15px;
     background: white;
