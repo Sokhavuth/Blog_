@@ -1,0 +1,25 @@
+/* public/styles/front/books.css */
+.Books .wrapper{
+    display: grid;
+    grid-template-columns: calc(25% - 11.25px) calc(25% - 11.25px) 
+                           calc(25% - 11.25px) calc(25% - 11.25px);
+    grid-gap: 15px;
+    padding: 15px;
+    background: white;
+}
+
+.Books .wrapper a{
+    display: block;
+    width: 100%;
+}
+
+.Books .wrapper a img{
+    width: 100%;
+    float: left;
+}
+
+@media only screen and (max-width: 600px){
+    .Books .wrapper{
+        grid-template-columns: 100%;
+    }
+}

@@ -7,5 +7,5 @@ export default async (req,res)=>{
        await create(req)
     }
 
-    res.redirect('/admin/post')
+    res.redirect('/admin/book')
 }

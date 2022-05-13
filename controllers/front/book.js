@@ -1,4 +1,4 @@
-//controllers/book.js
+//controllers/front/book.js
 import settings from '../../settings.js'
 import read from '../../models/book/read.js'
 import getArticles from '../../models/book/getArticles.js'

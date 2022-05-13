@@ -38,9 +38,9 @@
 
     if(data.route === '/'){
         home = 'active'
-    }else if(data.route === '/books/node'){
+    }else if(data.route === '/books/ES6'){
         node = 'active'
-    }else if(data.route === '/books/python'){
+    }else if(data.route === '/books/Python'){
         python = 'active'
     }else if(data.route === '/typing'){
         typing = 'active'
@@ -56,8 +56,8 @@
         <div class="outer region">
             <div class="topnav" id="myTopnav">
                 <a href="/" class="home <%= home %>">Home</a>
-                <a href="/books/node" class=" node <%= node %>">Node.js</a>
-                <a href="/books/python" class="python <%= python %>">Python</a>
+                <a href="/books/ES6" class=" node <%= node %>">Node.js</a>
+                <a href="/books/Python" class="python <%= python %>">Python</a>
                 <a href="/typing" class="typing <%= typing %>">Typing Lesson</a>
                 <a href="/job" class="job <%= job %>">Freelance Job</a>
                 <a href="/multimedia" class="multimedia <%= multimedia %>">Multimedia</a>
@@ -85,7 +85,9 @@
 <section class="include">
     <% if(data.route === '/'){ %>
         <%- include('home.ejs') %>
-    <% }else if(data.route.includes('/book')){ %>
+    <% }else if(data.route === '/book'){ %>
         <%- include('book.ejs') %>
+    <% }else if(data.route.includes('/books')){ %>
+        <%- include('books.ejs') %>
     <% } %>
 </section>

@@ -1,8 +1,8 @@
 /* public/styles/front/home.css */
 .Random .container{
     display: grid;
-    grid-template-columns: calc(20% - 5.5px) calc(20% - 5.5px) calc(20% - 5.5px) 
-                           calc(20% - 5.5px) calc(20% - 5.5px);
+    grid-template-columns: calc(20% - 5.6px) calc(20% - 5.6px) calc(20% - 5.6px) 
+                           calc(20% - 5.6px) calc(20% - 5.6px);
     grid-gap: 7px;
     background: white;
     padding: 7px;

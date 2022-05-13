@@ -1,0 +1,15 @@
+<!--views/front/books.ejs-->
+<link rel="stylesheet" href="/styles/front/books.css" />
+
+<section class="Books">
+    <div class="wrapper region">
+        <% if(data.books){ %>
+            <% for(let book of data.books){ %>
+            <a href="/book/<%= book.id %>">
+                <img src="<%= book.bookCover %>" />
+            </a>
+            <% } %>
+        <% } %>
+
+    </div>
+</section>
