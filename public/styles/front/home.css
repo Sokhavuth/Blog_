@@ -58,11 +58,24 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding-right: 20px;
+    padding: 0 20px 0 0;
+}
+
+.Random .listing ul li:nth-child(2){
+    text-align: center;
+    padding-left:20px;
 }
 
 .Random .listing ul li:last-child{
     padding-right: 0;
+    text-align: right;
+    position: relative;
+    left: 10px;
+}
+
+.Random .listing ul li span{
+    position: relative;
+    left: -10px;
 }
 
 .Random .listing ul li a{

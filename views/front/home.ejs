@@ -3,7 +3,7 @@
 
 <section class="Random">
     <div class="container region">
-        <% if(data.randomArticles){ %>
+        <% if(data.randomArticles.length > 0){ %>
             <% for(let v=0; v<5; v++){ %>
             <a href="/<%= data.type %>/<%= data.randomArticles[v].id %>">
                 <img src="<%= data.randomArticles[v].thumb %>" />
@@ -23,9 +23,11 @@
         <ul>
             <% for(let v=5; v<data.randomArticles.length; v++){ %>
                 <li>
+                    <span>
                     <a href="/book/<%= data.randomArticles[v].id %>">
                         <%= data.randomArticles[v].title %>
                     </a>
+                    <span>
                 </li>
             <% } %>
         </ul>

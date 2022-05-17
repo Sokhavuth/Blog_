@@ -1,6 +1,6 @@
 //controllers/admin/upload/read.js
 
-export default (req,res,next)=>{
+export default async (req,res,next)=>{
     const file = req.file
     if (!file) {
         const error = new Error('Please upload a file')

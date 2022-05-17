@@ -9,7 +9,7 @@ export default async (req,res)=>{
     mySettings.route = '/'
     mySettings.type = 'book'
 
-    mySettings.randomArticles = await randomArticles(req,35)
+    mySettings.randomArticles = await randomArticles(req,8)
     mySettings.randomBooks = await randomBooks(req,4)
     
     res.render('base',{data:mySettings})
