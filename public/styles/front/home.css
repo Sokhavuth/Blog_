@@ -112,5 +112,15 @@
 
     .Random .listing ul li{
         padding-right: 0;
+        text-align: center;
+    }
+
+    .Random .listing ul li:nth-child(2){
+        padding-left: 0;
+    }
+
+    .Random .listing ul li:last-child{
+        text-align: center;
+        left: 0;
     }
 }

@@ -10,7 +10,7 @@ export default async (req,res)=>{
     mySettings.type = 'book'
 
     mySettings.randomArticles = await randomArticles(req,8)
-    mySettings.randomBooks = await randomBooks(req,4)
+    mySettings.randomBooks = await randomBooks(req,8)
     
     res.render('base',{data:mySettings})
 }
