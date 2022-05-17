@@ -1,11 +1,11 @@
 /* public/styles/front/home.css */
 .Random .container{
     display: grid;
-    grid-template-columns: calc(20% - 5.6px) calc(20% - 5.6px) calc(20% - 5.6px) 
-                           calc(20% - 5.6px) calc(20% - 5.6px);
-    grid-gap: 7px;
-    background: white;
-    padding: 7px;
+    grid-template-columns: calc(20% - 8px) calc(20% - 8px) calc(20% - 8px) 
+                           calc(20% - 8px) calc(20% - 8px);
+    grid-gap: 10px;
+    background:white;
+    padding: 10px;
 }
 
 .Random .container img{
@@ -89,7 +89,7 @@
     grid-gap: 15px;
     padding: 15px;
     background: white;
-    margin: 20px auto;
+    margin: 5px auto 20px;
 }
 
 .Random .book img{
