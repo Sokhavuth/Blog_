@@ -11,10 +11,16 @@
 .Books .wrapper a{
     display: block;
     width: 100%;
+    position: relative;
+    padding-top: 140.26%;
 }
 
 .Books .wrapper a img{
     width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     float: left;
 }
 
