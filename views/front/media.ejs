@@ -46,12 +46,15 @@
                 }
             </script>
             <% } %>
-
             <div class="title"><%- data.item.title %></div>
             <% if(data.user){ %>
             <div class="edit">
-                <a href="/admin/post/edit/<%= data.item.id %>"><img src="/images/edit.png" /></a>
-                <a href="/admin/post/delete/<%= data.item.id %>"><img src="/images/delete.png" /></a>  
+                <a href="https://khmerweb-multimedia.vercel.app/admin/post/edit/<%= data.item.id %>">
+                    <img src="/images/edit.png" />
+                </a>
+                <a href="https://khmerweb-multimedia.vercel.app/admin/post/delete/<%= data.item.id %>">
+                    <img src="/images/delete.png" />
+                </a>  
             </div>
             <% } %>
             <% if(data.item.content !== ''){ %>
