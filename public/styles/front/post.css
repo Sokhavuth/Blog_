@@ -45,6 +45,7 @@
 
 .Post .video .playlist .part:hover{
     cursor: pointer;
+    opacity: .7;
 }
 
 .Post .wrapper .title{
