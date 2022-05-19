@@ -27,10 +27,11 @@ const __dirname = path.resolve()
 import index from './routes/index.js'
 import admin from './routes/admin.js'
 import mydb from './models/conMongoDB.js'
+import mydb1 from './models/conMongoDB1.js'
 
 app.use('/',async function(req,res,next){
     req.mydb = await mydb
-    req.__dirname = __dirname
+    req.mydb1 = await mydb1
     next()
 })
 

@@ -13,5 +13,8 @@ index.use('/books', booksRoute)
 
 import postRoute from './front/post.js'
 index.use('/post', postRoute) 
+
+import multimediaRoute from './front/multimedia.js'
+index.use('/multimedia', multimediaRoute) 
  
 export default index

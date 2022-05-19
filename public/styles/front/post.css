@@ -24,7 +24,7 @@
 }
 
 .Post .video .playlist{
-    max-height: 420px;
+    max-height: 410px;
     overflow: auto;
     padding-left: 10px;
 }

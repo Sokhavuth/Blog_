@@ -1,0 +1,29 @@
+<!--views/front/multimedia.ejs-->
+<link rel="stylesheet" href="/styles/front/multimedia.css" />
+
+<section class="Multimedia">
+    <% if(data.multimedia){ %>
+        <div class="thumbs region">
+        <% for(let index=0; index<5; index++){ %>
+            <a href="/multimedia/<%= data.multimedia[index].id %>">
+                <img src="<%= data.multimedia[index].thumb %>" />
+            </a>
+            <% if(index == 4){break} %>
+        <% } %>
+        </div>
+        <div class="navbar region">
+            <a href="/multimedia"><img src="/images/left.png" /></a>
+            <a href="/multimedia"><img src="/images/home.png" /></a>
+            <a href="/multimedia"><img src="/images/right.png" /></a>
+        </div>
+        <ul class="listing region">
+            <% for(let v=5; v<data.multimedia.length; v++){ %>
+            
+                <a href="/multimedia/<%= data.multimedia[v].id %>">
+                    <li> <%= data.multimedia[v].title %>"</li>
+                </a>
+            
+            <% } %>
+        </ul>
+    <% } %>
+</section>
