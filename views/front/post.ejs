@@ -1,0 +1,73 @@
+<!--views/front/post.ejs-->
+<script>
+    var fb_api = false
+    window.fbAsyncInit = function(){
+        fb_api = true
+    };
+</script>
+<div id="fb-root"></div>
+<script async defer src="https://connect.facebook.net/km_KH/sdk.js#xfbml=1&version=v3.2"></script>
+
+<link rel="stylesheet" href="/styles/front/post.css" />
+<script src="/scripts/setplayer.js"></script>
+
+<section class="Post">
+    <div class="wrapper region">
+        <% if(data.item){ %>
+        <article>
+            <% if((data.item.video) && (data.item.video !== "[]")){ %>
+            <div class="video">
+                <div class="screen"></div>
+                <div class="playlist"></div>
+            </div>
+            <script>
+                const videos = JSON.parse('<%- data.item.video %>')
+                let clicked = 0
+
+                for(let index in videos){
+                    let ending = ''
+                    if(index == videos.length-1){
+                        ending = videos[index].ending
+                    }
+                    
+                    let html = `<div id="part${index}" 
+                                class="part" onClick="setScreen(videos[${index}],${index},true)">
+                                    ភាគ​ទី ${++index} ${ending}
+                                </div>`
+                    $('.playlist').append(html)
+                    setScreen(videos[0],0,false)
+                }
+            </script>
+            <% } %>
+
+            <div class="title"><%- data.item.title %></div>
+            <% if(data.user){ %>
+            <div class="edit">
+                <a href="/admin/post/edit/<%= data.item.id %>"><img src="/images/edit.png" /></a>
+                <a href="/admin/post/delete/<%= data.item.id %>"><img src="/images/delete.png" /></a>  
+            </div>
+            <% } %>
+            <% if(data.item.content !== ''){ %>
+            <div class="content"><%- data.item.content %></div>
+            <% } %>
+
+            <div id="disqus_thread"></div>
+        </article>
+        <script>
+    
+            var disqus_config = function () {
+                this.page.url = "https://https-khmerweb-vercel-app/book/<%= data.item.id %>";  
+                this.page.identifier = "<%= data.item.id %>"; 
+            };
+    
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://https-khmerweb-vercel-app.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <% } %>
+    </div>
+</section>
