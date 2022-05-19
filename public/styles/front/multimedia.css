@@ -1,8 +1,7 @@
 /*styles/front/multimedia*/
 .Multimedia .thumbs{
     display: grid;
-    grid-template-columns: calc(20% - 5.6px) calc(20% - 5.6px) calc(20% - 5.6px)
-    calc(20% - 5.6px) calc(20% - 5.6px);
+    grid-template-columns: auto auto auto auto auto;
     grid-gap: 8px;
     padding: 8px;
     background: white;
