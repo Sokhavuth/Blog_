@@ -41,4 +41,19 @@
             <% } %>
         <% } %>
     </div>
+    <% if(data.randomVideos){ %>
+    <div class="video-wrapper region">
+        <a href="/"><img src="/images/left.png" /></a>
+        <a href="/"><img src="/images/home.png" /></a>
+        <a href="/"><img src="/images/right.png" /></a>
+    </div>
+    <div class="video region">
+        <% for(let video of data.randomVideos){ %>
+            <a href="/post/<%= video.id %>">
+                <img src="<%= video.thumb %>" />
+                <img class="play-icon" src="/images/play.png" />
+            </a>
+        <% } %>
+    </div>
+    <% } %>
 </section>

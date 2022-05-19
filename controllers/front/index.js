@@ -2,6 +2,7 @@
 import settings from '../../settings.js'
 import randomArticles from '../../models/book/randomArticles.js'
 import randomBooks from '../../models/book/randomBooks.js'
+import randomVideos from '../../models/post/randomVideos.js'
 
 export default async (req,res)=>{
     let mySettings = await settings()
@@ -11,6 +12,7 @@ export default async (req,res)=>{
 
     mySettings.randomArticles = await randomArticles(req,8)
     mySettings.randomBooks = await randomBooks(req,8)
+    mySettings.randomVideos = await randomVideos(req,13)
     
     res.render('base',{data:mySettings})
 }

@@ -68,7 +68,6 @@
 @media only screen and (max-width: 600px){
     .Post .video{
         grid-template-columns: 100%;
-        padding: 10px;
     }
 
     .Post .video .playlist{
