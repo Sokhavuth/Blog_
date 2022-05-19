@@ -51,6 +51,11 @@
     text-overflow: ellipsis;
 }
 
+.Multimedia .listing a li span{
+    position: relative;
+    left: -10px;
+}
+
 .Multimedia .listing a li:last-child{
     margin-right: 0;
 }
