@@ -1,11 +1,4 @@
 //controllers/front/index.js
-/*
-import settings from '../../settings.js'
-import randomArticles from '../../models/book/randomArticles.js'
-import randomBooks from '../../models/book/randomBooks.js'
-import randomVideos from '../../models/post/randomVideos.js'
-import { regexpToText } from 'nodemon/lib/utils'
-*/
 
 export default async (req,res)=>{
     if(req.body.type === 'book'){

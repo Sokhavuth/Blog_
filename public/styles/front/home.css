@@ -70,6 +70,13 @@
     height: 30px;
 }
 
+.Random .navigate img:hover,
+.Random .book-wrapper img:hover,
+.Random .video-wrapper img:hover{
+    cursor: pointer;
+    opacity: .7;
+}
+
 .Random .video{
     display: grid;
     grid-template-columns: calc(25% - 7.5px) calc(25% - 7.5px) 
