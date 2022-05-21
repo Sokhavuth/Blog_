@@ -4,9 +4,9 @@
 
 <section class="Random">
     <div class="navigate region">
-        <img onClick="getItems('book','.container')" src="/images/left.png" />
-        <img onClick="getItems('book','.container')" src="/images/home.png" />
-        <img onClick="getItems('book','.container')" src="/images/right.png" />
+        <img onClick="getItems('book','.container','.navigate')" src="/images/left.png" />
+        <img class="home" onClick="getItems('book','.container','.navigate')" src="/images/home.png" />
+        <img onClick="getItems('book','.container','.navigate')" src="/images/right.png" />
     </div>
     
     <div class="container region">
@@ -23,9 +23,9 @@
     </div>
 
     <div class="navigate book-wrapper region">
-        <img onClick="getItems('books','.book')" src="/images/left.png" />
-        <img onClick="getItems('books','.book')" src="/images/home.png" />
-        <img onClick="getItems('books','.book')" src="/images/right.png" />
+        <img onClick="getItems('books','.book','.book-wrapper')" src="/images/left.png" />
+        <img class="home" onClick="getItems('books','.book','.book-wrapper')" src="/images/home.png" />
+        <img onClick="getItems('books','.book','.book-wrapper')" src="/images/right.png" />
     </div>
     <div class="book region">
         <% if(data.randomBooks){ %>
@@ -38,9 +38,9 @@
     </div>
     <% if(data.randomVideos){ %>
     <div class="navigate video-wrapper region">
-        <img onClick="getItems('video','.video')" src="/images/left.png" />
-        <img onClick="getItems('video','.video')" src="/images/home.png" />
-        <img onClick="getItems('video','.video')" src="/images/right.png" />
+        <img onClick="getItems('video','.video','.video-wrapper')" src="/images/left.png" />
+        <img class="home" onClick="getItems('video','.video','.video-wrapper')" src="/images/home.png" />
+        <img onClick="getItems('video','.video','.video-wrapper')" src="/images/right.png" />
     </div>
     <div class="video region">
         <% for(let video of data.randomVideos){ %>

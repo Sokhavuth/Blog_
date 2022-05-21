@@ -1,5 +1,6 @@
 //public/scripts/randomItem.js
-function getItems(type,element){
+function getItems(type,element,clicked){
+    $(clicked+" .home").attr('src','/images/loading.gif')
     const data = {
         type: type,
     }
@@ -32,6 +33,7 @@ function getItems(type,element){
         }
 
         $(element).html(html)
+        $(clicked+" .home").attr('src','/images/home.png')
     })
     .catch((error) => {
         alert('Error:', error)
