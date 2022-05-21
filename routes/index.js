@@ -16,5 +16,8 @@ index.use('/post', postRoute)
 
 import multimediaRoute from './front/multimedia.js'
 index.use('/multimedia', multimediaRoute) 
+
+import randomItemRoute from './front/randomItem.js'
+index.use('/randomItem', randomItemRoute)
  
 export default index

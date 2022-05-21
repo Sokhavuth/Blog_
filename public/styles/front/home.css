@@ -1,11 +1,21 @@
 /* public/styles/front/home.css */
+.Random .navigate{
+    padding: 5px 0 0;
+    background: white;
+    text-align: center;
+    border-bottom: 1px solid lightgrey;
+}
+
+.Random .navigate img{
+    height: 25px;
+}
 .Random .container{
     display: grid;
-    grid-template-columns: calc(20% - 8px) calc(20% - 8px) calc(20% - 8px) 
-                           calc(20% - 8px) calc(20% - 8px);
+    grid-template-columns: auto auto auto auto auto;
     grid-gap: 10px;
     background:white;
     padding: 10px;
+    margin-bottom: 20px;
 }
 
 .Random .container img{
@@ -26,60 +36,8 @@
     height: 100%;
 }
 
-.Random .container a .play-icon{
-    width: 20%;
-    height: auto;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-}
-
-.Random .listing .navigate{
-    padding: 5px 0 0;
-    background: lavender;
-    text-align: center;
-}
-
-.Random .listing .navigate img{
-    height: 25px;
-    
-}
-
-.Random .listing ul{
-    background: white;
-    list-style-position: inside;
-    display: grid;
-    grid-template-columns: 33.33% 33.33% 33.33%;
-    padding: 20px;
-    color: black;
-}
-
-.Random .listing ul li{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: 0 20px 0 0;
-}
-
-.Random .listing ul li:nth-child(2){
-    text-align: center;
-    padding-left:20px;
-}
-
-.Random .listing ul li:last-child{
-    padding-right: 0;
-    text-align: right;
-    position: relative;
-    left: 10px;
-}
-
-.Random .listing ul li span{
-    position: relative;
-    left: -10px;
-}
-
-.Random .listing ul li a{
-    color: black;
+.Random .container a:nth-child(1) .play-icon{
+    width: 15%;
 }
 
 .Random .book{
@@ -89,7 +47,7 @@
     grid-gap: 15px;
     padding: 15px;
     background: white;
-    margin: 5px auto 30px;
+    margin-bottom: 20px;
 }
 
 .Random .book a{
@@ -107,10 +65,9 @@
     left: 0;
 }
 
-.Random .video-wrapper{
-    background: lavender;
-    text-align: center;
-    padding-top: 5px;
+.Random .book-wrapper img,
+.Random .video-wrapper img{
+    height: 30px;
 }
 
 .Random .video{
@@ -121,10 +78,6 @@
     padding: 10px;
     background: white;
     margin-bottom: 30px;
-}
-
-.Random .video-wrapper img{
-    height: 30px;
 }
 
 .Random .video a:nth-child(1){

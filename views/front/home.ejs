@@ -1,10 +1,17 @@
 <!--views/front/home.ejs-->
 <link rel="stylesheet" href="/styles/front/home.css" />
+<script src="/scripts/randomItem.js"></script>
 
 <section class="Random">
+    <div class="navigate region">
+        <img onClick="getItems('book','.container')" src="/images/left.png" />
+        <img onClick="getItems('book','.container')" src="/images/home.png" />
+        <img onClick="getItems('book','.container')" src="/images/right.png" />
+    </div>
+    
     <div class="container region">
         <% if(data.randomArticles.length > 0){ %>
-            <% for(let v=0; v<5; v++){ %>
+            <% for(let v=0; v<data.randomArticles.length; v++){ %>
             <a href="/<%= data.type %>/<%= data.randomArticles[v].id %>">
                 <img src="<%= data.randomArticles[v].thumb %>" />
                 <% if((data.randomArticles[v].video)&&(data.randomArticles[v].video !== "[]")){ %>
@@ -14,23 +21,11 @@
             <% } %>
         <% } %>
     </div>
-    <div class="listing region">
-        <div class="navigate">
-            <a href='/'><img src="/images/left.png" /></a>
-            <a href="/"><img src="/images/home.png" /></a>
-            <a href='/'><img src="/images/right.png" /></a>
-        </div>
-        <ul>
-            <% for(let v=5; v<data.randomArticles.length; v++){ %>
-                <li>
-                    <span>
-                    <a href="/book/<%= data.randomArticles[v].id %>">
-                        <%= data.randomArticles[v].title %>
-                    </a>
-                    <span>
-                </li>
-            <% } %>
-        </ul>
+
+    <div class="navigate book-wrapper region">
+        <img onClick="getItems('books','.book')" src="/images/left.png" />
+        <img onClick="getItems('books','.book')" src="/images/home.png" />
+        <img onClick="getItems('books','.book')" src="/images/right.png" />
     </div>
     <div class="book region">
         <% if(data.randomBooks){ %>
@@ -42,10 +37,10 @@
         <% } %>
     </div>
     <% if(data.randomVideos){ %>
-    <div class="video-wrapper region">
-        <a href="/"><img src="/images/left.png" /></a>
-        <a href="/"><img src="/images/home.png" /></a>
-        <a href="/"><img src="/images/right.png" /></a>
+    <div class="navigate video-wrapper region">
+        <img onClick="getItems('video','.video')" src="/images/left.png" />
+        <img onClick="getItems('video','.video')" src="/images/home.png" />
+        <img onClick="getItems('video','.video')" src="/images/right.png" />
     </div>
     <div class="video region">
         <% for(let video of data.randomVideos){ %>
