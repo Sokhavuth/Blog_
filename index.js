@@ -28,10 +28,12 @@ import index from './routes/index.js'
 import admin from './routes/admin.js'
 import mydb from './models/conMongoDB.js'
 import mydb1 from './models/conMongoDB1.js'
+import mydb2 from './models/conMongoDB2.js'
 
 app.use('/',async function(req,res,next){
     req.mydb = await mydb
     req.mydb1 = await mydb1
+    req.mydb2 = await mydb2
     next()
 })
 

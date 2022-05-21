@@ -13,5 +13,9 @@ export default async (req,res)=>{
         const module = await import('../../models/post/randomVideos.js')
         const randomVideos = await module.default(req)
         res.json(randomVideos)
+    }else if(req.body.type === 'job'){
+        const module = await import('../../models/job/randomJobs.js')
+        const randomJobs = await module.default(req)
+        res.json(randomJobs)
     }
 }

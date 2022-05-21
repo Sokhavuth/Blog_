@@ -63,7 +63,6 @@
                 <a href="/books/Python" class="python <%= python %>">Python</a>
                 <a href="/books/PHP" class="php <%= php %>">PHP</a>
                 <a href="https://khmerweb-typing.herokuapp.com/" class="typing <%= typing %>">Typing Lesson</a>
-                <a href="https://job-orcin.vercel.app/" class="job <%= job %>">Freelance Job</a>
                 <a href="/multimedia" class="multimedia <%= multimedia %>">Multimedia</a>
                 <a href="/contact" class="contact <%= contact %>">Contact</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -100,4 +99,28 @@
     <% }else if(data.route.includes('/media')){ %>
         <%- include('media.ejs') %>
     <% } %>
+</section>
+
+<section class="Random">
+    <link rel="stylesheet" href="/styles/front/home.css" />
+    <script src="/scripts/randomItem.js"></script>
+    <% if (data.randomJobs){ %>
+        <div class="navigate job-wrapper">
+            <img onClick="getItems('job','.Random .job','.job-wrapper')" src="/images/left.png" />
+            <img class="home" onClick="getItems('job','.Random .job','.job-wrapper')" src="/images/home.png" />
+            <img onClick="getItems('job','.Random .job','.job-wrapper')" src="/images/right.png" />
+        </div>
+        <div class="job-outer">
+            <div class="job region">
+                <% for(let job of data.randomJobs){ %>
+                <a href="/job/<%= job.id %>">
+                    <div><%= job.title %></div>
+                    <div><%= job.payable %></div>
+                    <div>Job location: <%= job.location %></div>
+                    <div>Closing date: <%= job.enddate.toLocaleDateString() %></div>
+                </a>
+                <% } %>
+            </div>
+        </div>
+        <% } %>
 </section>

@@ -1,4 +1,4 @@
-//models/post/randomMultimedia.js
+//models/multimedia/randomMultimedia.js
 
 export default async (req,amount)=>{
     const pipeline = [{$sample:{size:amount}}]

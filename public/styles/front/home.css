@@ -84,7 +84,6 @@
     grid-gap: 10px;
     padding: 10px;
     background: white;
-    margin-bottom: 30px;
 }
 
 .Random .video a:nth-child(1){
@@ -118,6 +117,38 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
+}
+
+.Random .job-wrapper{
+    border: none;
+    margin-top: 30px;
+}
+
+.Random .job-outer{
+    background: white;
+    padding: 0 0 30px;
+}
+
+.Random .job-outer .job{
+    display: grid;
+    grid-template-columns: calc(33.33% - 6.66px) calc(33.33% - 6.66px) calc(33.33% - 6.66px);
+    grid-gap: 10px;
+}
+
+.Random .job-outer .job a{
+    border: 2px solid lightgrey;
+    padding: 10px;
+    color: black;
+}
+
+.Random .job-outer .job a div{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Random .job-outer .job a div:nth-child(2){
+    color: var(--background);
 }
 
 @media only screen and (max-width: 600px){
@@ -158,5 +189,10 @@
 
     .Random .video .play-icon{
         width: 15%;
+    }
+
+    .Random .job-outer .job{
+        grid-template-columns: 100%;
+        padding: 0 20px;
     }
 }
