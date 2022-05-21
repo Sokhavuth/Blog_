@@ -39,6 +39,12 @@
     text-align: right;
 }
 
+.Menu{
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
 .Menu .wrapper{
     background: white;
     margin-bottom: 7px;
