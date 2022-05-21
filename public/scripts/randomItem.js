@@ -16,7 +16,7 @@ function getItems(type,element,clicked){
         let html = ''
         for(let v=0; v<randomItems.length; v++){
             if(type === 'video'){
-                html += `<a href="/video/${randomItems[v].id}">`
+                html += `<a href="/post/${randomItems[v].id}">`
             }else{
                 html += `<a href="/book/${randomItems[v].id}">`
             }
