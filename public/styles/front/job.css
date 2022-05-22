@@ -36,7 +36,7 @@
 }
 
 .Job .job .content .title{
-    font: 22px/1.1 StardosStencil;
+    font: 22px/1.2 StardosStencil;
     padding-bottom: 20px;
 }
 
@@ -46,6 +46,7 @@
 
 .Job .job .content .job-content{
     margin-top: 30px;
+    font: 15px/1.5 Courgette,HandWriting;
 }
 
 .Job .job .content div{
