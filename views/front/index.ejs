@@ -98,6 +98,8 @@
         <%- include('multimedia.ejs') %>
     <% }else if(data.route.includes('/media')){ %>
         <%- include('media.ejs') %>
+    <% }else if(data.route.includes('/job')){ %>
+        <%- include('job.ejs') %>
     <% } %>
 </section>
 
@@ -112,14 +114,26 @@
         </div>
         <div class="job-outer">
             <div class="job region">
-                <% for(let job of data.randomJobs){ %>
-                <a href="/job/<%= job.id %>">
-                    <div><%= job.title %></div>
-                    <div><%= job.payable %></div>
-                    <div>Job location: <%= job.location %></div>
-                    <div>Closing date: <%= job.enddate.toLocaleDateString() %></div>
+                
+            <% if((data.route === '/job')&&(data.randomJobs.length >= 5)){ %>
+                <% for(let v=5; v<data.randomJobs.length; v++){ %>
+                <a href="/job/<%= data.randomJobs[v].id %>">
+                    <div><%= data.randomJobs[v].title %></div>
+                    <div><%= data.randomJobs[v].payable %></div>
+                    <div>Job location: <%= data.randomJobs[v].location %></div>
+                    <div>Closing date: <%= data.randomJobs[v].enddate.toLocaleDateString() %></div>
                 </a>
                 <% } %>
+            <% }else if(data.route !== '/job'){ %>
+                <% for(let v=0; v<data.randomJobs.length; v++){ %>
+                <a href="/job/<%= data.randomJobs[v].id %>">
+                    <div><%= data.randomJobs[v].title %></div>
+                    <div><%= data.randomJobs[v].payable %></div>
+                    <div>Job location: <%= data.randomJobs[v].location %></div>
+                    <div>Closing date: <%= data.randomJobs[v].enddate.toLocaleDateString() %></div>
+                </a>
+                <% } %>
+            <% } %>
             </div>
         </div>
         <% } %>

@@ -19,5 +19,8 @@ index.use('/multimedia', multimediaRoute)
 
 import randomItemRoute from './front/randomItem.js'
 index.use('/randomItem', randomItemRoute)
+
+import jobRoute from './front/job.js'
+index.use('/job', jobRoute)
  
 export default index

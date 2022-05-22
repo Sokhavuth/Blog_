@@ -1,0 +1,29 @@
+<!--views/front/job.ejs-->
+<link rel="stylesheet" href="/styles/front/job.css" />
+
+<section class="Job">
+    <div class="job region">
+        <div class="content">
+            <div class="title"><%= data.item.title %></div>
+            <div class="payable">
+                <div><%= data.item.payable %></div>
+                <a href="<%= data.item.link %>" target="_blank">Bid on this job</a>
+            </div>
+            <div class="location">Job location: <%= data.item.location %></div>
+            <div class="closing-date">Closing date: <%= data.item.enddate.toLocaleDateString() %></div>
+            <div class="skill">Skills: <%= data.item.categories.toString().replaceAll(',', ', ') %></div>      
+            <article class="job-content"><%- data.item.content %></article>  
+        </div>
+        <div class="sidebar">
+            <% for(let v=0; v<data.randomJobs.length; v++){ %>
+            <% if(v == 5){break} %>
+            <a href="/job/<%= data.randomJobs[v].id %>">
+                <div><%= data.randomJobs[v].title %></div>
+                <div><%= data.randomJobs[v].payable %></div>
+                <div>Job location: <%= data.randomJobs[v].location %></div>
+                <div>Closing date: <%= data.randomJobs[v].enddate.toLocaleDateString() %></div>
+            </a>
+            <% } %>
+        </div>
+    </div>
+</section>
