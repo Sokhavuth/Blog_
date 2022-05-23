@@ -15,10 +15,11 @@
 
 .Search .search ul li{
     display: grid;
-    grid-template-columns: 25% auto;
+    grid-template-columns: 25% calc(75% - 10px);
     grid-gap: 10px;
     align-items: center;
     background: white;
+    padding-right: 10px;
 }
 
 .Search .search ul li .thumb{
@@ -45,6 +46,12 @@
 
 .Search .search ul li .title{
     color: rgb(94, 94, 94);
+}
+
+.Search .search ul li .title div{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @media only screen and (max-width: 600px){
