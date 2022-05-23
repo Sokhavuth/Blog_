@@ -25,6 +25,8 @@
                     <div><%= item.title %></div>
                     <% if(data.type === "job"){ %>
                     <div><%= item.postdate.toLocaleDateString() %></div>
+                    <% }else if(data.type === "multimedia"){ %>
+                    <div><%= (new Date(item.datetime)).toLocaleDateString() %></div>
                     <% }else{ %>
                     <div><%= (new Date(item.date)).toLocaleDateString() %></div>
                     <% } %>
