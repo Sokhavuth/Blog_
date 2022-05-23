@@ -1,4 +1,4 @@
-//routes/admin/post.js
+//routes/admin/search.js
 import express from 'express'
 const search = express.Router()
 

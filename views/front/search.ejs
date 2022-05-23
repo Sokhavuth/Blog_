@@ -1,0 +1,33 @@
+<!--views/front/search.ejs-->
+<link rel="stylesheet" href="/styles/front/search.css" />
+
+<section class="Search">
+    <div class="status region">លទ្ធផល​នៃ​ការស្វែង​រកៈ</div>
+    <div class="search region">
+    <% if(data.items.length > 0){ %>
+        <ul>
+        <% for(let item of data.items){ %>
+            <li>
+                <a class="thumb" href="/<%= data.type %>/<%= item.id %>">
+                    <% if(data.type == 'job'){ %>
+                    <img src="/images/job-search.png" />
+                    <% }else{ %>
+                    <img src="<%= item.thumb %>" />
+                    <% } %>
+                    <% if((item.video)&&(item.video !== "[]")){ %>
+                    <img class="play-icon" src="/images/play.png" />
+                    <% } %>
+                    <% if((item.entries)&&(item.entries !== "[]")){ %>
+                        <img class="play-icon" src="/images/play.png" />
+                    <% } %>
+                </a>
+                <a class="title" href="/<%= data.type %>/<%= item.id %>">
+                    <div><%= item.title %></div>
+                    <div><%= (new Date(item.date)).toLocaleDateString() %></div>
+                </a>
+            </li>
+        <% } %>
+        </ul>
+    <% } %>
+    </div>
+</section>

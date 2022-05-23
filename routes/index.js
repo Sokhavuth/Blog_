@@ -22,5 +22,8 @@ index.use('/randomItem', randomItemRoute)
 
 import jobRoute from './front/job.js'
 index.use('/job', jobRoute)
+
+import searchRoute from './front/search.js'
+index.use('/search', searchRoute)
  
 export default index
