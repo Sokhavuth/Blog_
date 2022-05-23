@@ -23,7 +23,11 @@
                 </a>
                 <a class="title" href="/<%= data.type %>/<%= item.id %>">
                     <div><%= item.title %></div>
+                    <% if(data.type === "job"){ %>
+                    <div><%= item.postdate.toLocaleDateString() %></div>
+                    <% }else{ %>
                     <div><%= (new Date(item.date)).toLocaleDateString() %></div>
+                    <% } %>
                 </a>
             </li>
         <% } %>

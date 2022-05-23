@@ -57,6 +57,6 @@
 @media only screen and (max-width: 600px){
     .Search .search ul{
         grid-template-columns:100%;
-        padding: 15px;
+        padding: 10px;
     }
 }
