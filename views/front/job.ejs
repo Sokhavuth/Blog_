@@ -11,7 +11,7 @@
             </div>
             <div class="location">Job location: <%= data.item.location %></div>
             <div class="closing-date">Closing date: <%= data.item.enddate.toLocaleDateString() %></div>
-            <div class="skill">Skills: <span><%= data.item.categories.toString().replaceAll(',', ', ') %></span></div>      
+            <div class="skill">Skill needed: <span><%= data.item.categories.toString().replaceAll(',', ', ') %></span></div>      
             <article class="job-content"><%- data.item.content %></article>  
         </div>
         <div class="sidebar">
