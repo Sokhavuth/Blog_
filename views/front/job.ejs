@@ -10,7 +10,7 @@
                 <a href="<%= data.item.link %>" target="_blank">Bid on this job</a>
             </div>
             <div class="location">Job location: <%= data.item.location %></div>
-            <div class="closing-date">Closing date: <%= data.item.enddate.toLocaleDateString() %></div>
+            <div class="closing-date">Closing date: <%= data.item.enddate.toLocaleDateString('it-IT') %></div>
             <div class="skill">Skill needed: <span><%= data.item.categories.toString().replaceAll(',', ', ') %></span></div>      
             <article class="job-content"><%- data.item.content %></article>  
         </div>
@@ -21,7 +21,7 @@
                 <div><%= data.randomJobs[v].title %></div>
                 <div><%= data.randomJobs[v].payable %></div>
                 <div>Job location: <%= data.randomJobs[v].location %></div>
-                <div>Closing date: <%= data.randomJobs[v].enddate.toLocaleDateString() %></div>
+                <div>Closing date: <%= data.randomJobs[v].enddate.toLocaleDateString('it-IT') %></div>
             </a>
             <% } %>
         </div>
