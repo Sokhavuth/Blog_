@@ -22,7 +22,11 @@
                     <% } %>
                 </a>
                 <a class="title" href="/<%= data.type %>/<%= item.id %>">
+                    <% if((item.bookTitle) && (item.bookTitle !== '')){ %>
+                    <div><%= item.bookTitle %></div>
+                    <% }else{ %>
                     <div><%= item.title %></div>
+                    <% } %>
                     <% if(data.type === "job"){ %>
                     <div><%= item.postdate.toLocaleDateString() %></div>
                     <% }else if(data.type === "multimedia"){ %>
