@@ -14,7 +14,7 @@ import MongoStore from 'connect-mongo'
 const app = express()
 
 app.use(session({
-    srote: MongoStore.create({mongoUrl:process.env.DATABASE_URI}),
+    store: MongoStore.create({mongoUrl:process.env.DATABASE_URI}),
     secret: process.env.SECRET_KEY,
     resave: false,
     saveUninitialized: false
