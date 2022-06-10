@@ -126,7 +126,7 @@
                     <div><%= data.randomJobs[v].title %></div>
                     <div><%= data.randomJobs[v].payable %></div>
                     <div>Job location: <%= data.randomJobs[v].location %></div>
-                    <div>Closing date: <%= data.randomJobs[v].enddate.toLocaleDateString() %></div>
+                    <div>Closing date: <%= data.randomJobs[v].enddate.toLocaleDateString('it-IT') %></div>
                 </a>
                 <% } %>
             <% }else if(data.route !== '/job'){ %>

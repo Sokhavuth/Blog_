@@ -1,6 +1,5 @@
 //models/conMongoDB.js
 //npm install mongodb
-//npm install dotenv
  
 import {MongoClient} from 'mongodb'
 const mymongo = MongoClient

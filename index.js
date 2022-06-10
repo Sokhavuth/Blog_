@@ -3,6 +3,7 @@
 //npm install ejs
 //npm install express-session
 //npm install connect-mongo
+//npm install dotenv
 
 import express from 'express'
 import path from 'path'
