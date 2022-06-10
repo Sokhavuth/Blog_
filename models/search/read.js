@@ -2,7 +2,7 @@
 
 export default async (req,amount=10)=>{
     let collection = ''
-    const querry = {$or:[{title:{"$regex": req.body.q}},{content:{"$regex":req.body.q}}]}
+    const querry = {$or:[{category:req.body.q},{title:{"$regex": req.body.q}},{content:{"$regex":req.body.q}}]}
     
     if(req.body.adminType){
         if(req.body.adminType === 'ការផ្សាយ'){
@@ -30,7 +30,7 @@ export default async (req,amount=10)=>{
         }else if(req.body.type === 'សៀវភៅ'){
             collection = 'books'
             req.body.type = 'book'
-            const pipeline = [{$match:{$and:[{bookCover:{$not:{$eq:''}}},{bookTitle:{"$regex": req.body.q}}]}},{$limit:amount}]
+            const pipeline = [{$match:{$and:[{bookCover:{$not:{$eq:''}}},{$or:[{category:req.body.q},{bookTitle:{"$regex": req.body.q}}]}]}},{$limit:amount}]
             return await req.mydb.collection(collection).aggregate(pipeline).sort({date:-1,_id:-1}).toArray()
         }else if(req.body.type === 'Video'){
             collection = 'posts'

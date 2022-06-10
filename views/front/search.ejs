@@ -28,11 +28,11 @@
                     <div><%= item.title %></div>
                     <% } %>
                     <% if(data.type === "job"){ %>
-                    <div><%= item.postdate.toLocaleDateString() %></div>
+                    <div><%= item.postdate.toLocaleDateString('it-IT') %></div>
                     <% }else if(data.type === "multimedia"){ %>
-                    <div><%= (new Date(item.datetime)).toLocaleDateString() %></div>
+                    <div><%= (new Date(item.datetime)).toLocaleDateString('it-IT') %></div>
                     <% }else{ %>
-                    <div><%= (new Date(item.date)).toLocaleDateString() %></div>
+                    <div><%= (new Date(item.date)).toLocaleDateString('it-IT') %></div>
                     <% } %>
                 </a>
             </li>
