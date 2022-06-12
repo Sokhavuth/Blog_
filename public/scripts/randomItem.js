@@ -29,7 +29,7 @@ function getItems(type,element,clicked){
                 html += `<div>${randomItems[v].title}</div>`
                 html += `<div>${randomItems[v].payable}</div>`
                 html += `<div>Job location: ${randomItems[v].location}</div>`
-                html += `<div>Closing date: ${(new Date(randomItems[v].enddate)).toLocaleDateString()}</div>`
+                html += `<div>Closing date: ${(new Date(randomItems[v].enddate)).toLocaleDateString('it-IT')}</div>`
             }else{
                 html += `<img src="${randomItems[v].thumb}" />`
                 if((randomItems[v].video)&&(randomItems[v].video !== "[]")){ 
