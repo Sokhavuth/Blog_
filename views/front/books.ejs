@@ -1,5 +1,6 @@
 <!--views/front/books.ejs-->
 <link rel="stylesheet" href="/styles/front/books.css" />
+<script src="/scripts/paginate.js"></script>
 
 <section class="Books">
     <div class="wrapper region">
@@ -10,6 +11,10 @@
             </a>
             <% } %>
         <% } %>
-
     </div>
+    <% if(data.count > data.categoryPostLimit){ %>
+    <div class="pagination region">
+        <img onclick="paginate('<%= data.route %>')" src="/images/load-more.png"/>
+    </div>
+    <% } %>
 </section>

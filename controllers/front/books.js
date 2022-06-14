@@ -8,7 +8,9 @@ export default async (req,res)=>{
     mySettings.pageTitle = "ទំព័រ​សៀវភៅ"
     mySettings.route = `/books/${req.params.type}`
 
-    mySettings.books = await getBooks(req,mySettings.categoryPostLimit)
+    const result = await getBooks(req,mySettings.categoryPostLimit)
+    mySettings.books = result.books
+    mySettings.count = result.count
     mySettings.randomJobs = await randomJobs(req)
     
     res.render('base',{data:mySettings})
