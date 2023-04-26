@@ -67,7 +67,7 @@
                 <a href="/books/PHP" class="php <%= php %>">PHP</a>
                 <a href="https://apsara_template-1-t8027376.deta.app/">Template</a>
                 <a href="/multimedia" class="multimedia <%= multimedia %>">Multimedia</a>
-                <a href="/contact" class="contact <%= contact %>">Contact</a>
+                <a href="/page" class="contact <%= contact %>">Contact</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                   <i class="fa fa-bars"></i>
                 </a>
@@ -105,6 +105,8 @@
         <%- include('job.ejs') %>
     <% }else if(data.route.includes('/search')){ %>
         <%- include('search.ejs') %>
+    <% }else if(data.route.includes('/page')){ %>
+        <%- include('page.ejs') %>
     <% } %>
 </section>
 

@@ -25,5 +25,8 @@ index.use('/job', jobRoute)
 
 import searchRoute from './front/search.js'
 index.use('/search', searchRoute)
+
+import pageRoute from './front/page.js'
+index.use('/page', pageRoute)
  
 export default index
